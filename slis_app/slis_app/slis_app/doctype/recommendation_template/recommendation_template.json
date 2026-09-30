@@ -1,0 +1,69 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2026-03-09 12:41:23.308491",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "crop",
+  "fym_text",
+  "fertilizer_text",
+  "schedule_text",
+  "other_notes"
+ ],
+ "fields": [
+  {
+   "fieldname": "crop",
+   "fieldtype": "Link",
+   "label": "Crop",
+   "options": "Crops Master"
+  },
+  {
+   "fieldname": "fertilizer_text",
+   "fieldtype": "Text Editor",
+   "label": "Fertilizer Text"
+  },
+  {
+   "fieldname": "fym_text",
+   "fieldtype": "Text Editor",
+   "label": "FYM Text"
+  },
+  {
+   "fieldname": "schedule_text",
+   "fieldtype": "Text Editor",
+   "label": "Schedule Text"
+  },
+  {
+   "fieldname": "other_notes",
+   "fieldtype": "Text Editor",
+   "label": "Other Notes"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2026-03-09 14:25:22.477590",
+ "modified_by": "Administrator",
+ "module": "Slis App",
+ "name": "Recommendation Template",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

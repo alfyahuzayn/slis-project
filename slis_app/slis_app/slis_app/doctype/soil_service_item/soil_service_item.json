@@ -1,0 +1,97 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "field:service_name",
+ "creation": "2026-02-13 10:00:46.061890",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "service_code",
+  "service_name",
+  "service_category",
+  "unit_type",
+  "is_concession_applicable",
+  "column_break_bfln",
+  "rate",
+  "section_break_thhh",
+  "rate_history"
+ ],
+ "fields": [
+  {
+   "fieldname": "service_code",
+   "fieldtype": "Data",
+   "label": "Service Code"
+  },
+  {
+   "fieldname": "service_name",
+   "fieldtype": "Data",
+   "label": "Service Name",
+   "unique": 1
+  },
+  {
+   "fieldname": "service_category",
+   "fieldtype": "Link",
+   "label": "Service Category",
+   "options": "Service Category"
+  },
+  {
+   "fieldname": "unit_type",
+   "fieldtype": "Select",
+   "label": "Unit Type",
+   "options": "\nPer Sample\nPer Person\nPer Day\nPer Map\nPer Hectare\nPer Estimation\nPer Series\nPer River Basin\nPer Report\nPer Copy\nPer Atlas\nPer Kit"
+  },
+  {
+   "default": "0",
+   "fieldname": "is_concession_applicable",
+   "fieldtype": "Check",
+   "label": "Is Concession Applicable"
+  },
+  {
+   "fieldname": "section_break_thhh",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "rate_history",
+   "fieldtype": "Table",
+   "label": "Rate History",
+   "options": "Service Rate History"
+  },
+  {
+   "fieldname": "column_break_bfln",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "rate",
+   "fieldtype": "Currency",
+   "label": "Rate"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2026-03-02 15:55:08.067079",
+ "modified_by": "Administrator",
+ "module": "Slis App",
+ "name": "Soil Service Item",
+ "naming_rule": "By fieldname",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

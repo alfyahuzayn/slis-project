@@ -1,0 +1,85 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "field:go_order_number",
+ "creation": "2026-03-05 16:46:17.102863",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "go_order_number",
+  "financial_year",
+  "profile_sample_count",
+  "other_sample_count",
+  "test_per_ra",
+  "section_break_tsfd",
+  "lab_target"
+ ],
+ "fields": [
+  {
+   "fieldname": "go_order_number",
+   "fieldtype": "Data",
+   "label": "Go Order Number",
+   "unique": 1
+  },
+  {
+   "fieldname": "financial_year",
+   "fieldtype": "Link",
+   "label": "Financial Year",
+   "options": "Fiscal Year"
+  },
+  {
+   "fieldname": "profile_sample_count",
+   "fieldtype": "Int",
+   "label": "Profile Sample Count"
+  },
+  {
+   "fieldname": "other_sample_count",
+   "fieldtype": "Int",
+   "label": "Other Sample Count"
+  },
+  {
+   "fieldname": "test_per_ra",
+   "fieldtype": "Int",
+   "label": "Test Per RA",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_tsfd",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "lab_target",
+   "fieldtype": "Table",
+   "label": "Lab target",
+   "options": "Lab Target"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2026-03-10 12:35:17.503972",
+ "modified_by": "Administrator",
+ "module": "Slis App",
+ "name": "Monthly Target",
+ "naming_rule": "By fieldname",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

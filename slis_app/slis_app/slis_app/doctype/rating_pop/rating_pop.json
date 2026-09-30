@@ -1,0 +1,56 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2026-02-10 15:13:48.674842",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "rating_label",
+  "min_value",
+  "max_value",
+  "adjustment_factor"
+ ],
+ "fields": [
+  {
+   "fieldname": "rating_label",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Rating Label",
+   "options": "\nvery low\nlow\nmedium\nhigh"
+  },
+  {
+   "fieldname": "min_value",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Min Value"
+  },
+  {
+   "fieldname": "max_value",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Max Value"
+  },
+  {
+   "fieldname": "adjustment_factor",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Adjustment Factor"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2026-02-10 15:21:50.064593",
+ "modified_by": "Administrator",
+ "module": "Slis App",
+ "name": "Rating PoP",
+ "owner": "Administrator",
+ "permissions": [],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

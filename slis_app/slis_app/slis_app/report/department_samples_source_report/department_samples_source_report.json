@@ -1,0 +1,60 @@
+{
+ "add_total_row": 0,
+ "add_translate_data": 0,
+ "columns": [],
+ "creation": "2026-07-15 16:40:22.967599",
+ "disabled": 0,
+ "docstatus": 0,
+ "doctype": "Report",
+ "filters": [],
+ "idx": 0,
+ "is_standard": "Yes",
+ "json": "{}",
+ "letter_head": null,
+ "modified": "2026-07-15 16:40:22.967599",
+ "modified_by": "Administrator",
+ "module": "Slis App",
+ "name": "Department Samples Source Report",
+ "owner": "Administrator",
+ "prepared_report": 0,
+ "ref_doctype": "Soil Sample Collection",
+ "report_name": "Department Samples Source Report",
+ "report_script": "def execute(filters=None):\n    # Define columns\n    columns = [\n        {\"label\": \"Serial No\", \"fieldname\": \"serial_number\", \"fieldtype\": \"Int\", \"width\": 80},\n        {\"label\": \"Sample ID\", \"fieldname\": \"sample_id\", \"fieldtype\": \"Link\", \"options\": \"Soil Sample Collection\", \"width\": 150},\n        {\"label\": \"Target Lab\", \"fieldname\": \"target_lab\", \"fieldtype\": \"Data\", \"width\": 150},\n        {\"label\": \"Received Office\", \"fieldname\": \"received_office\", \"fieldtype\": \"Data\", \"width\": 150},\n        {\"label\": \"Collection Date\", \"fieldname\": \"collection_date\", \"fieldtype\": \"Date\", \"width\": 120},\n        {\"label\": \"Collection Program Name\", \"fieldname\": \"collection_program_name\", \"fieldtype\": \"Data\", \"width\": 200}\n    ]\n\n    # Fetch data\n    # Ensure field names here match your DocType exactly\n    data = frappe.db.sql(\"\"\"\n        SELECT \n            name, \n            target_lab, \n            district_office_name, \n            collection_date, \n            name_of_type \n        FROM `tabSoil Sample Collection` \n        ORDER BY name DESC\n    \"\"\", as_dict=True)\n\n    results = []\n    for i, row in enumerate(data, start=1):\n        results.append({\n            \"serial_number\": i,\n            \"sample_id\": row.name,\n            \"target_lab\": row.target_lab,\n            \"received_office\": row.district_office_name,\n            \"collection_date\": row.collection_date,\n            \"collection_program_name\": row.name_of_type\n        })\n\n    return columns, results",
+ "report_type": "Script Report",
+ "roles": [
+  {
+   "role": "System Manager"
+  },
+  {
+   "role": "Creator"
+  },
+  {
+   "role": "Lab Assistant"
+  },
+  {
+   "role": "Managing Director"
+  },
+  {
+   "role": "Assistant Director"
+  },
+  {
+   "role": "Research Assistant"
+  },
+  {
+   "role": "PSC Officer"
+  },
+  {
+   "role": "Senior Chemist"
+  },
+  {
+   "role": "Soil Intaker L1"
+  },
+  {
+   "role": "Asset & Stock Manager L1"
+  },
+  {
+   "role": "Soil Intaker L2"
+  }
+ ],
+ "timeout": 0
+}

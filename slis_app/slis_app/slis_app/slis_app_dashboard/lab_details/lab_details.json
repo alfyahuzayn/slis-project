@@ -1,0 +1,29 @@
+{
+ "cards": [],
+ "charts": [
+  {
+   "chart": "Lab Sample Status",
+   "width": "Full"
+  },
+  {
+   "chart": "Scheme-Wise Total Samples",
+   "width": "Half"
+  },
+  {
+   "chart": "Employee Wise Sample Status",
+   "width": "Half"
+  }
+ ],
+ "creation": "2026-03-09 14:50:51.931647",
+ "dashboard_name": "Lab Details",
+ "docstatus": 0,
+ "doctype": "Dashboard",
+ "idx": 0,
+ "is_default": 0,
+ "is_standard": 1,
+ "modified": "2026-03-10 12:36:41.117350",
+ "modified_by": "Administrator",
+ "module": "Slis App",
+ "name": "Lab Details",
+ "owner": "Administrator"
+}

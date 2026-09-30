@@ -1,0 +1,112 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "field:lab_name",
+ "creation": "2026-02-06 16:04:38.855592",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "lab_name",
+  "malayalam_name",
+  "lab_code",
+  "lab_address",
+  "lab_email",
+  "lab_phone_number",
+  "nabl_certification_tab",
+  "certificate_number",
+  "effective_from",
+  "column_break_hzbt",
+  "valid_till",
+  "certification_attach"
+ ],
+ "fields": [
+  {
+   "fieldname": "lab_name",
+   "fieldtype": "Data",
+   "label": "Lab Name",
+   "unique": 1
+  },
+  {
+   "fieldname": "lab_code",
+   "fieldtype": "Data",
+   "label": "Lab Code"
+  },
+  {
+   "fieldname": "lab_address",
+   "fieldtype": "Small Text",
+   "label": "Lab Address"
+  },
+  {
+   "fieldname": "nabl_certification_tab",
+   "fieldtype": "Tab Break",
+   "label": "NABL Certification"
+  },
+  {
+   "fieldname": "certificate_number",
+   "fieldtype": "Data",
+   "label": "Certificate Number"
+  },
+  {
+   "fieldname": "effective_from",
+   "fieldtype": "Date",
+   "label": "Effective From"
+  },
+  {
+   "fieldname": "column_break_hzbt",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "valid_till",
+   "fieldtype": "Date",
+   "label": "Valid Till"
+  },
+  {
+   "fieldname": "certification_attach",
+   "fieldtype": "Attach",
+   "label": "Certification Attach"
+  },
+  {
+   "fieldname": "lab_email",
+   "fieldtype": "Data",
+   "label": "Lab Email"
+  },
+  {
+   "fieldname": "lab_phone_number",
+   "fieldtype": "Data",
+   "label": "Lab Phone Number"
+  },
+  {
+   "fieldname": "malayalam_name",
+   "fieldtype": "Data",
+   "label": "Malayalam Name"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2026-09-16 08:23:32.125503",
+ "modified_by": "Administrator",
+ "module": "Slis App",
+ "name": "Soil Laboratory",
+ "naming_rule": "By fieldname",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

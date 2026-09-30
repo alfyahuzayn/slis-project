@@ -1,0 +1,55 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2026-02-06 15:54:43.306442",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "variable_key",
+  "value",
+  "description",
+  "parent_test_row"
+ ],
+ "fields": [
+  {
+   "fieldname": "variable_key",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Variable Key"
+  },
+  {
+   "fieldname": "value",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "Value"
+  },
+  {
+   "fieldname": "description",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Description"
+  },
+  {
+   "fieldname": "parent_test_row",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "Parent Test Id"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2026-02-07 07:58:28.661462",
+ "modified_by": "Administrator",
+ "module": "Slis App",
+ "name": "Result Variable Value",
+ "owner": "Administrator",
+ "permissions": [],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

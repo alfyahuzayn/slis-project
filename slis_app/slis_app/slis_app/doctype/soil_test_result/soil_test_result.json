@@ -1,0 +1,141 @@
+{
+ "actions": [],
+ "allow_import": 1,
+ "allow_rename": 1,
+ "creation": "2026-02-06 15:46:31.181949",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "sample_id",
+  "main_sample_id",
+  "results_table",
+  "variable_inputs",
+  "recommendations_table",
+  "lab_name",
+  "client_type",
+  "section_break_viem",
+  "number_of_sample",
+  "lab_code_prefix",
+  "lab_code_start",
+  "html",
+  "test_sample_data",
+  "name_of_type"
+ ],
+ "fields": [
+  {
+   "depends_on": "eval:doc.client_type != 'Department'||doc.client_type !='Consultancy'",
+   "fieldname": "results_table",
+   "fieldtype": "Table",
+   "label": "Tests Performed",
+   "options": "Soil Test Result Entry",
+   "read_only": 1
+  },
+  {
+   "depends_on": "eval:doc.client_type != 'Department'",
+   "fieldname": "variable_inputs",
+   "fieldtype": "Table",
+   "label": "Raw Measurements",
+   "options": "Result Variable Value"
+  },
+  {
+   "fieldname": "sample_id",
+   "fieldtype": "Link",
+   "hidden": 1,
+   "label": "Register Id",
+   "options": "Register"
+  },
+  {
+   "depends_on": "eval:doc.client_type != 'Department'",
+   "fieldname": "recommendations_table",
+   "fieldtype": "Table",
+   "hidden": 1,
+   "label": "Recommendations Table",
+   "options": "Fertilizer Recommendation Entry"
+  },
+  {
+   "fieldname": "lab_name",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "Lab Name"
+  },
+  {
+   "depends_on": "eval:doc.client_type == 'Department'|| doc.client_type == 'Consultancy'",
+   "fieldname": "client_type",
+   "fieldtype": "Data",
+   "label": "Client Type"
+  },
+  {
+   "depends_on": "eval:doc.client_type == 'Department'",
+   "fieldname": "name_of_type",
+   "fieldtype": "Data",
+   "label": "Program Name"
+  },
+  {
+   "fieldname": "test_sample_data",
+   "fieldtype": "Table",
+   "hidden": 1,
+   "label": "Test Sample Data ",
+   "options": "Sample Data"
+  },
+  {
+   "depends_on": "eval:doc.client_type == 'Department'|| doc.client_type == 'Consultancy'",
+   "fieldname": "number_of_sample",
+   "fieldtype": "Int",
+   "label": "Number of Sample"
+  },
+  {
+   "fieldname": "html",
+   "fieldtype": "HTML",
+   "label": "HTML"
+  },
+  {
+   "fieldname": "lab_code_prefix",
+   "fieldtype": "Data",
+   "label": "Lab code Prefix"
+  },
+  {
+   "fieldname": "lab_code_start",
+   "fieldtype": "Int",
+   "hidden": 1,
+   "label": "Lab Code Start"
+  },
+  {
+   "fieldname": "section_break_viem",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "main_sample_id",
+   "fieldtype": "Link",
+   "label": "Sample Id",
+   "options": "Soil Sample Collection"
+  }
+ ],
+ "grid_page_length": 50,
+ "hide_toolbar": 1,
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2026-06-07 20:24:12.305081",
+ "modified_by": "Administrator",
+ "module": "Slis App",
+ "name": "Soil Test Result",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

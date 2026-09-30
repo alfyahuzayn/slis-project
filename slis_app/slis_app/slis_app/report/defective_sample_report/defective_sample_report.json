@@ -1,0 +1,60 @@
+{
+ "add_total_row": 0,
+ "add_translate_data": 0,
+ "columns": [],
+ "creation": "2026-07-16 11:52:37.340372",
+ "disabled": 0,
+ "docstatus": 0,
+ "doctype": "Report",
+ "filters": [],
+ "idx": 0,
+ "is_standard": "Yes",
+ "json": "{}",
+ "letter_head": null,
+ "modified": "2026-07-16 11:52:37.340372",
+ "modified_by": "Administrator",
+ "module": "Slis App",
+ "name": "Defective Sample Report",
+ "owner": "Administrator",
+ "prepared_report": 0,
+ "query": "SELECT \n    name AS \"Sample ID:Link/Soil Sample Collection:150\", \n    status AS \"Status:Data:100\", \n    rejection_remarks AS \"Remark:Text:200\", \n    collection_date AS \"Date:Date:120\", \n    district_name AS \"District:Data:150\", \n    name_of_type AS \"Scheme/Program Name:Data:200\", \n    target_lab AS \"Target Lab:Data:150\",\n    lab_name AS \"Recieving Lab:Data:150\"\nFROM `tabSoil Sample Collection`\nWHERE status = 'Rejected'\nORDER BY collection_date DESC",
+ "ref_doctype": "Soil Sample Collection",
+ "report_name": "Defective Sample Report",
+ "report_type": "Query Report",
+ "roles": [
+  {
+   "role": "System Manager"
+  },
+  {
+   "role": "Creator"
+  },
+  {
+   "role": "Lab Assistant"
+  },
+  {
+   "role": "Managing Director"
+  },
+  {
+   "role": "Assistant Director"
+  },
+  {
+   "role": "Research Assistant"
+  },
+  {
+   "role": "PSC Officer"
+  },
+  {
+   "role": "Senior Chemist"
+  },
+  {
+   "role": "Soil Intaker L1"
+  },
+  {
+   "role": "Asset & Stock Manager L1"
+  },
+  {
+   "role": "Soil Intaker L2"
+  }
+ ],
+ "timeout": 0
+}

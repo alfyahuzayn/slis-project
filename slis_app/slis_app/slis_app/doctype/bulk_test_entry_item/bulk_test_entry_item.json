@@ -1,0 +1,162 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2026-03-16 15:13:45.534577",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "register_id",
+  "v1",
+  "v2",
+  "v3",
+  "v4",
+  "v5",
+  "v6",
+  "v7",
+  "v8",
+  "v9",
+  "v10",
+  "v11",
+  "v12",
+  "v13",
+  "v15",
+  "v16",
+  "v17",
+  "v18",
+  "v19",
+  "v20"
+ ],
+ "fields": [
+  {
+   "fieldname": "v1",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "V1"
+  },
+  {
+   "fieldname": "v2",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "V2"
+  },
+  {
+   "fieldname": "v3",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "V3"
+  },
+  {
+   "fieldname": "v4",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "V4"
+  },
+  {
+   "fieldname": "v5",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "V5"
+  },
+  {
+   "fieldname": "v6",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "V6"
+  },
+  {
+   "fieldname": "v7",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "V7"
+  },
+  {
+   "fieldname": "v8",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "V8"
+  },
+  {
+   "fieldname": "v9",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "V9"
+  },
+  {
+   "fieldname": "v10",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "V10"
+  },
+  {
+   "fieldname": "v11",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "V11"
+  },
+  {
+   "fieldname": "v12",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "V12"
+  },
+  {
+   "fieldname": "v13",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "V13"
+  },
+  {
+   "fieldname": "v15",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "V15"
+  },
+  {
+   "fieldname": "v16",
+   "fieldtype": "Float",
+   "label": "V16"
+  },
+  {
+   "fieldname": "v17",
+   "fieldtype": "Float",
+   "label": "V17"
+  },
+  {
+   "fieldname": "v18",
+   "fieldtype": "Float",
+   "label": "V18"
+  },
+  {
+   "fieldname": "v19",
+   "fieldtype": "Float",
+   "label": "V19"
+  },
+  {
+   "fieldname": "v20",
+   "fieldtype": "Float",
+   "label": "V20"
+  },
+  {
+   "fieldname": "register_id",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Register Id",
+   "options": "Register"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2026-03-18 10:21:17.939041",
+ "modified_by": "Administrator",
+ "module": "Slis App",
+ "name": "Bulk Test Entry Item",
+ "owner": "Administrator",
+ "permissions": [],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

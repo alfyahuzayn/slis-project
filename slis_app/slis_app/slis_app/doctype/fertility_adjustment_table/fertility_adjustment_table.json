@@ -1,0 +1,109 @@
+{
+ "actions": [],
+ "allow_import": 1,
+ "allow_rename": 1,
+ "autoname": "field:class",
+ "creation": "2026-02-28 16:03:08.872227",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "class",
+  "oc_sandy_min",
+  "oc_sandy_max",
+  "oc_clayey_min",
+  "oc_clayey_max",
+  "avail_p_min",
+  "avail_p_max",
+  "avail_k_min",
+  "avail_k_max",
+  "n_adjustment",
+  "p_and_k_adjustment"
+ ],
+ "fields": [
+  {
+   "fieldname": "class",
+   "fieldtype": "Int",
+   "label": "Class",
+   "unique": 1
+  },
+  {
+   "fieldname": "avail_p_max",
+   "fieldtype": "Float",
+   "label": "Avail P Max"
+  },
+  {
+   "fieldname": "avail_k_max",
+   "fieldtype": "Float",
+   "label": "Avail K Max"
+  },
+  {
+   "fieldname": "oc_sandy_min",
+   "fieldtype": "Float",
+   "label": "% OC (Sandy) Min"
+  },
+  {
+   "fieldname": "oc_sandy_max",
+   "fieldtype": "Float",
+   "label": "% OC (Sandy) Max"
+  },
+  {
+   "fieldname": "oc_clayey_min",
+   "fieldtype": "Float",
+   "label": "% OC (Clayey) Min"
+  },
+  {
+   "fieldname": "oc_clayey_max",
+   "fieldtype": "Float",
+   "label": "% OC (Clayey) Max"
+  },
+  {
+   "fieldname": "avail_p_min",
+   "fieldtype": "Data",
+   "label": "Avail P Min"
+  },
+  {
+   "fieldname": "avail_k_min",
+   "fieldtype": "Data",
+   "label": "Avail K Min"
+  },
+  {
+   "fieldname": "n_adjustment",
+   "fieldtype": "Data",
+   "label": "N Adjustment %"
+  },
+  {
+   "fieldname": "p_and_k_adjustment",
+   "fieldtype": "Data",
+   "label": "P and K Adjustment %"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2026-03-10 06:43:43.285581",
+ "modified_by": "Administrator",
+ "module": "Slis App",
+ "name": "Fertility Adjustment Table",
+ "naming_rule": "By fieldname",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "import": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

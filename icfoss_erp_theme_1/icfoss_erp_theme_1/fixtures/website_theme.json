@@ -1,0 +1,28 @@
+[
+ {
+  "background_color": "light grey",
+  "button_gradients": 0,
+  "button_rounded_corners": 1,
+  "button_shadows": 0,
+  "custom": 1,
+  "custom_overrides": null,
+  "custom_scss": "/* Base Styles (Always Centered) */\n#page-login {\n    background: url('http://slisdev.icfoss.org/files/slis_login_bg.png') no-repeat center center fixed;\n    background-size: cover;\n    height: 100vh;\n    width: 100vw;\n    \n    /* THE FIX: Absolute centering using Flexbox */\n    display: flex !important;\n    justify-content: center !important; \n    align-items: center !important;\n    margin: 0 !important;\n}\n\n.for-login {\n    width: 400px;\n    /* REMOVED: margin-right: 40vw (This was pushing it away from center) */\n    margin: 0 !important; \n    z-index: 10;\n}\n\n.page-card {\n    background-color: rgba(255, 255, 255, 0.9) !important;\n    border-radius: 10px;\n    padding: 20px;\n    box-shadow: 0 10px 25px rgba(0,0,0,0.2);\n    border: none !important;\n}\n\n/* --- LOGIN PAGE TITLE OVERRIDE --- */\n\n.for-login .page-card-head h4 {\n    display: none !important; /* Cleaner way to hide the old text */\n}\n\n.for-login .page-card-head::after {\n    content: \"Login to SLIS\";\n    font-size: 24px !important;\n    font-weight: 700;\n    display: block;\n    color: #581908;\n    text-align: center; /* Ensures text is centered in the card */\n    padding: 10px 0;\n}\n\n/* Mobile Responsiveness */\n@media (max-width: 768px) {\n    .for-login {\n        width: 90% !important;\n        max-width: 350px;\n    }\n    \n}\n\n.page-card {\n    background-color:  rgb(222 217 214) !important;\n    border-radius: 10px;\n    padding: 20px;\n    box-shadow: 0 10px 25px rgba(0,0,0,.2);\n    border: none !important;\n}\n",
+  "dark_color": null,
+  "docstatus": 0,
+  "doctype": "Website Theme",
+  "font_properties": "wght@300;400;500;600;700;800",
+  "font_size": null,
+  "google_font": "https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap",
+  "ignored_apps": [],
+  "js": null,
+  "light_color": null,
+  "modified": "2026-03-25 12:49:28.791011",
+  "module": "Icfoss Erp Theme 1",
+  "name": "SLIS Theme",
+  "primary_color": "sky blue",
+  "text_color": "deep charcoal",
+  "theme": "SLIS Theme",
+  "theme_scss": "\n@import url(\"https://fonts.googleapis.com/css2?family=https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap:wght@300;400;500;600;700;800&display=swap\");\n// backward compatibility. deprecated in v15\n$font-family-sans-serif: \"https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap\", \"InterVariable\", \"Inter\", -apple-system, BlinkMacSystemFont,\n\t\"Segoe UI\", \"Roboto\", \"Oxygen\", \"Ubuntu\", \"Cantarell\", \"Fira Sans\",\n\t\"Droid Sans\", \"Helvetica Neue\", sans-serif;\n\n// override font stack if custom font is set in website theme\n:root {\n\t--font-stack: \"https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap\", \"InterVariable\", \"Inter\", -apple-system, BlinkMacSystemFont,\n\t\"Segoe UI\", \"Roboto\", \"Oxygen\", \"Ubuntu\", \"Cantarell\", \"Fira Sans\",\n\t\"Droid Sans\", \"Helvetica Neue\", sans-serif !important;\n}\n$primary: #449CF0;$body-text-color: #4f4f4f;$body-bg: #999696;$enable-shadows: false;\n$enable-gradients: false;\n$enable-rounded: true;\n\n// Bootstrap Variable Overrides\n\n\n// Import themes from installed apps\n@import \"frappe/public/scss/website.bundle\";\n@import \"erpnext/public/scss/website\";\n\n\n\n// Custom Theme\n/* Base Styles (Always Centered) */\n#page-login {\n    background: url('http://slisdev.icfoss.org/files/slis_login_bg.png') no-repeat center center fixed;\n    background-size: cover;\n    height: 100vh;\n    width: 100vw;\n    \n    /* THE FIX: Absolute centering using Flexbox */\n    display: flex !important;\n    justify-content: center !important; \n    align-items: center !important;\n    margin: 0 !important;\n}\n\n.for-login {\n    width: 400px;\n    /* REMOVED: margin-right: 40vw (This was pushing it away from center) */\n    margin: 0 !important; \n    z-index: 10;\n}\n\n.page-card {\n    background-color: rgba(255, 255, 255, 0.9) !important;\n    border-radius: 10px;\n    padding: 20px;\n    box-shadow: 0 10px 25px rgba(0,0,0,0.2);\n    border: none !important;\n}\n\n/* --- LOGIN PAGE TITLE OVERRIDE --- */\n\n.for-login .page-card-head h4 {\n    display: none !important; /* Cleaner way to hide the old text */\n}\n\n.for-login .page-card-head::after {\n    content: \"Login to SLIS\";\n    font-size: 24px !important;\n    font-weight: 700;\n    display: block;\n    color: #581908;\n    text-align: center; /* Ensures text is centered in the card */\n    padding: 10px 0;\n}\n\n/* Mobile Responsiveness */\n@media (max-width: 768px) {\n    .for-login {\n        width: 90% !important;\n        max-width: 350px;\n    }\n    \n}\n\n.page-card {\n    background-color:  rgb(222 217 214) !important;\n    border-radius: 10px;\n    padding: 20px;\n    box-shadow: 0 10px 25px rgba(0,0,0,.2);\n    border: none !important;\n}\n\n\n:root {\n\t\n\t--primary: #{$primary};\n\t--primary-color: #{$primary};\n\t\n\t--bg-color: #{$body-bg};\n\t\n\t--text-color: #{$body-text-color};\n\t--text-light: #{$body-text-color};\n\t}\n",
+  "theme_url": "/files/website_theme/slis_theme_a702bff7.css"
+ }
+]

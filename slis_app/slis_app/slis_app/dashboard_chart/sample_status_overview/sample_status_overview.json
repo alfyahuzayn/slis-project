@@ -1,0 +1,46 @@
+{
+ "based_on": "",
+ "chart_name": "Sample Status Overview",
+ "chart_type": "Custom",
+ "creation": "2026-03-09 12:08:03.877430",
+ "currency": "",
+ "docstatus": 0,
+ "doctype": "Dashboard Chart",
+ "document_type": "",
+ "dynamic_filters_json": "[]",
+ "filters_json": "[]",
+ "group_by_type": "Count",
+ "idx": 0,
+ "is_public": 1,
+ "is_standard": 1,
+ "modified": "2026-03-11 11:21:10.087434",
+ "modified_by": "Administrator",
+ "module": "Slis App",
+ "name": "Sample Status Overview",
+ "number_of_groups": 0,
+ "owner": "Administrator",
+ "parent_document_type": "",
+ "roles": [
+  {
+   "role": "PSC Officer"
+  },
+  {
+   "role": "Managing Director"
+  },
+  {
+   "role": "Assistant Director"
+  },
+  {
+   "role": "Research Assistant"
+  }
+ ],
+ "show_values_over_chart": 0,
+ "source": "sample",
+ "time_interval": "Yearly",
+ "timeseries": 0,
+ "timespan": "Last Year",
+ "type": "Bar",
+ "use_report_chart": 0,
+ "value_based_on": "",
+ "y_axis": []
+}

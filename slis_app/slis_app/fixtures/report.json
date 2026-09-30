@@ -1,0 +1,599 @@
+[
+ {
+  "add_total_row": 0,
+  "add_translate_data": 0,
+  "columns": [],
+  "disabled": 0,
+  "docstatus": 0,
+  "doctype": "Report",
+  "filters": [],
+  "is_standard": "Yes",
+  "javascript": null,
+  "json": null,
+  "letter_head": null,
+  "modified": "2026-06-29 11:15:30.086231",
+  "module": "Slis App",
+  "name": "Narrative Progress Report",
+  "prepared_report": 0,
+  "query": null,
+  "ref_doctype": "Soil Sample Collection",
+  "reference_report": null,
+  "report_name": "Narrative Progress Report",
+  "report_script": null,
+  "report_type": "Script Report",
+  "roles": [
+   {
+    "parent": "Narrative Progress Report",
+    "parentfield": "roles",
+    "parenttype": "Report",
+    "role": "Soil Intaker L1"
+   },
+   {
+    "parent": "Narrative Progress Report",
+    "parentfield": "roles",
+    "parenttype": "Report",
+    "role": "slis_admin"
+   },
+   {
+    "parent": "Narrative Progress Report",
+    "parentfield": "roles",
+    "parenttype": "Report",
+    "role": "Soil Intaker L2"
+   }
+  ],
+  "timeout": 0
+ },
+ {
+  "add_total_row": 0,
+  "add_translate_data": 0,
+  "columns": [],
+  "disabled": 0,
+  "docstatus": 0,
+  "doctype": "Report",
+  "filters": [
+   {
+    "default": null,
+    "fieldname": "from_date",
+    "fieldtype": "Date",
+    "label": "From Date",
+    "mandatory": 0,
+    "options": null,
+    "parent": "Sample Status",
+    "parentfield": "filters",
+    "parenttype": "Report",
+    "wildcard_filter": 0
+   },
+   {
+    "default": null,
+    "fieldname": "to_date",
+    "fieldtype": "Date",
+    "label": "To Date",
+    "mandatory": 0,
+    "options": null,
+    "parent": "Sample Status",
+    "parentfield": "filters",
+    "parenttype": "Report",
+    "wildcard_filter": 0
+   }
+  ],
+  "is_standard": "Yes",
+  "javascript": null,
+  "json": null,
+  "letter_head": null,
+  "modified": "2026-06-29 11:15:43.677567",
+  "module": "Slis App",
+  "name": "Sample Status",
+  "prepared_report": 0,
+  "query": "SELECT \n    CASE \n        WHEN status = 'Completed' THEN 'Completed'\n        ELSE 'Pending'\n    END as status_category,\n    COUNT(name) as total_samples\nFROM \n    `tabSoil Sample Collection`\nWHERE \n    status != 'Draft'\nGROUP BY \n    status_category;",
+  "ref_doctype": "Soil Sample Collection",
+  "reference_report": null,
+  "report_name": "Sample Status",
+  "report_script": "\ndef execute(filters=None):\n    # 1. Define the columns. We use \"html\" fieldtype for the count to make it a link.\n    columns = [\n        {\"label\": \"Status Category\", \"fieldname\": \"status_category\", \"fieldtype\": \"Data\", \"width\": 200},\n        {\"label\": \"Total Samples\", \"fieldname\": \"total_samples\", \"fieldtype\": \"html\", \"width\": 150}\n    ]\n\n    # 2. Get the counts from the database\n    # Count Completed\n    completed_count = frappe.db.count(\"Soil Sample Collection\", filters={\"status\": \"Completed\"})\n    \n    # Count Pending (Everything except Completed and Draft)\n    pending_count = frappe.db.count(\"Soil Sample Collection\", filters={\n        \"status\": [\"not in\", [\"Completed\", \"Draft\"]]\n    })\n\n    # 3. Create the Links\n    # This URL opens the list view with a filter applied\n    completed_link = f'<a href=\"/app/soil-sample-collection?status=Completed\"><b>{completed_count}</b></a>'\n    \n    # This URL uses a JSON-style filter for multiple \"Pending\" statuses\n    pending_url = '/app/soil-sample-collection?status=[\"not in\", [\"Completed\", \"Draft\"]]'\n    pending_link = f'<a href=\\'{pending_url}\\'><b>{pending_count}</b></a>'\n\n    # 4. Format the data for the report table\n    data = [\n        {\n            \"status_category\": \"Completed\",\n            \"total_samples\": completed_link\n        },\n        {\n            \"status_category\": \"Pending\",\n            \"total_samples\": pending_link\n        }\n    ]\n\n    return columns, data",
+  "report_type": "Script Report",
+  "roles": [
+   {
+    "parent": "Sample Status",
+    "parentfield": "roles",
+    "parenttype": "Report",
+    "role": "Soil Intaker L1"
+   },
+   {
+    "parent": "Sample Status",
+    "parentfield": "roles",
+    "parenttype": "Report",
+    "role": "slis_admin"
+   },
+   {
+    "parent": "Sample Status",
+    "parentfield": "roles",
+    "parenttype": "Report",
+    "role": "Soil Intaker L2"
+   }
+  ],
+  "timeout": 0
+ },
+ {
+  "add_total_row": 0,
+  "add_translate_data": 0,
+  "columns": [],
+  "disabled": 0,
+  "docstatus": 0,
+  "doctype": "Report",
+  "filters": [],
+  "is_standard": "Yes",
+  "javascript": null,
+  "json": null,
+  "letter_head": null,
+  "modified": "2026-06-29 11:15:13.884549",
+  "module": "Slis App",
+  "name": "Assignment Pending Report",
+  "prepared_report": 0,
+  "query": null,
+  "ref_doctype": "Soil Sample Collection",
+  "reference_report": null,
+  "report_name": "Assignment Pending Report",
+  "report_script": null,
+  "report_type": "Script Report",
+  "roles": [
+   {
+    "parent": "Assignment Pending Report",
+    "parentfield": "roles",
+    "parenttype": "Report",
+    "role": "Soil Intaker L1"
+   },
+   {
+    "parent": "Assignment Pending Report",
+    "parentfield": "roles",
+    "parenttype": "Report",
+    "role": "slis_admin"
+   },
+   {
+    "parent": "Assignment Pending Report",
+    "parentfield": "roles",
+    "parenttype": "Report",
+    "role": "Soil Intaker L2"
+   }
+  ],
+  "timeout": 0
+ },
+ {
+  "add_total_row": 0,
+  "add_translate_data": 0,
+  "columns": [],
+  "disabled": 0,
+  "docstatus": 0,
+  "doctype": "Report",
+  "filters": [],
+  "is_standard": "Yes",
+  "javascript": null,
+  "json": null,
+  "letter_head": null,
+  "modified": "2026-08-01 11:57:44.199200",
+  "module": "Slis App",
+  "name": "RA Wise Report",
+  "prepared_report": 0,
+  "query": null,
+  "ref_doctype": "Soil Sample Collection",
+  "reference_report": null,
+  "report_name": "RA Wise Report",
+  "report_script": null,
+  "report_type": "Script Report",
+  "roles": [
+   {
+    "parent": "RA Wise Report",
+    "parentfield": "roles",
+    "parenttype": "Report",
+    "role": "Managing Director"
+   },
+   {
+    "parent": "RA Wise Report",
+    "parentfield": "roles",
+    "parenttype": "Report",
+    "role": "System Manager"
+   },
+   {
+    "parent": "RA Wise Report",
+    "parentfield": "roles",
+    "parenttype": "Report",
+    "role": "Soil Intaker L2"
+   },
+   {
+    "parent": "RA Wise Report",
+    "parentfield": "roles",
+    "parenttype": "Report",
+    "role": "Soil Intaker L1"
+   },
+   {
+    "parent": "RA Wise Report",
+    "parentfield": "roles",
+    "parenttype": "Report",
+    "role": "slis_admin"
+   }
+  ],
+  "timeout": 0
+ },
+ {
+  "add_total_row": 0,
+  "add_translate_data": 0,
+  "columns": [],
+  "disabled": 0,
+  "docstatus": 0,
+  "doctype": "Report",
+  "filters": [],
+  "is_standard": "Yes",
+  "javascript": null,
+  "json": null,
+  "letter_head": null,
+  "modified": "2026-06-29 11:19:35.408070",
+  "module": "Slis App",
+  "name": "Employee Movement Register Report",
+  "prepared_report": 0,
+  "query": null,
+  "ref_doctype": "Movement Register",
+  "reference_report": null,
+  "report_name": "Employee Movement Register Report",
+  "report_script": null,
+  "report_type": "Script Report",
+  "roles": [
+   {
+    "parent": "Employee Movement Register Report",
+    "parentfield": "roles",
+    "parenttype": "Report",
+    "role": "Soil Intaker L1"
+   },
+   {
+    "parent": "Employee Movement Register Report",
+    "parentfield": "roles",
+    "parenttype": "Report",
+    "role": "slis_admin"
+   },
+   {
+    "parent": "Employee Movement Register Report",
+    "parentfield": "roles",
+    "parenttype": "Report",
+    "role": "Soil Intaker L2"
+   }
+  ],
+  "timeout": 0
+ },
+ {
+  "add_total_row": 0,
+  "add_translate_data": 0,
+  "columns": [],
+  "disabled": 0,
+  "docstatus": 0,
+  "doctype": "Report",
+  "filters": [],
+  "is_standard": "Yes",
+  "javascript": null,
+  "json": "{}",
+  "letter_head": null,
+  "modified": "2026-06-29 11:16:28.639803",
+  "module": "Slis App",
+  "name": "Soil Sample Client Summary",
+  "prepared_report": 0,
+  "query": null,
+  "ref_doctype": "Soil Sample Collection",
+  "reference_report": null,
+  "report_name": "Soil Sample Client Summary",
+  "report_script": null,
+  "report_type": "Script Report",
+  "roles": [
+   {
+    "parent": "Soil Sample Client Summary",
+    "parentfield": "roles",
+    "parenttype": "Report",
+    "role": "slis_admin"
+   },
+   {
+    "parent": "Soil Sample Client Summary",
+    "parentfield": "roles",
+    "parenttype": "Report",
+    "role": "Soil Intaker L2"
+   },
+   {
+    "parent": "Soil Sample Client Summary",
+    "parentfield": "roles",
+    "parenttype": "Report",
+    "role": "Soil Intaker L1"
+   }
+  ],
+  "timeout": 0
+ },
+ {
+  "add_total_row": 0,
+  "add_translate_data": 0,
+  "columns": [],
+  "disabled": 0,
+  "docstatus": 0,
+  "doctype": "Report",
+  "filters": [],
+  "is_standard": "Yes",
+  "javascript": null,
+  "json": null,
+  "letter_head": null,
+  "modified": "2026-06-29 11:15:21.764953",
+  "module": "Slis App",
+  "name": "Soil Sample Scheme Summary",
+  "prepared_report": 0,
+  "query": null,
+  "ref_doctype": "Soil Sample Collection",
+  "reference_report": null,
+  "report_name": "Soil Sample Scheme Summary",
+  "report_script": null,
+  "report_type": "Script Report",
+  "roles": [
+   {
+    "parent": "Soil Sample Scheme Summary",
+    "parentfield": "roles",
+    "parenttype": "Report",
+    "role": "Soil Intaker L1"
+   },
+   {
+    "parent": "Soil Sample Scheme Summary",
+    "parentfield": "roles",
+    "parenttype": "Report",
+    "role": "slis_admin"
+   },
+   {
+    "parent": "Soil Sample Scheme Summary",
+    "parentfield": "roles",
+    "parenttype": "Report",
+    "role": "Soil Intaker L2"
+   }
+  ],
+  "timeout": 0
+ },
+ {
+  "add_total_row": 0,
+  "add_translate_data": 0,
+  "columns": [],
+  "disabled": 0,
+  "docstatus": 0,
+  "doctype": "Report",
+  "filters": [],
+  "is_standard": "Yes",
+  "javascript": null,
+  "json": "{}",
+  "letter_head": null,
+  "modified": "2026-07-15 16:40:22.967599",
+  "module": "Slis App",
+  "name": "Department Samples Source Report",
+  "prepared_report": 0,
+  "query": null,
+  "ref_doctype": "Soil Sample Collection",
+  "reference_report": null,
+  "report_name": "Department Samples Source Report",
+  "report_script": "def execute(filters=None):\n    # Define columns\n    columns = [\n        {\"label\": \"Serial No\", \"fieldname\": \"serial_number\", \"fieldtype\": \"Int\", \"width\": 80},\n        {\"label\": \"Sample ID\", \"fieldname\": \"sample_id\", \"fieldtype\": \"Link\", \"options\": \"Soil Sample Collection\", \"width\": 150},\n        {\"label\": \"Target Lab\", \"fieldname\": \"target_lab\", \"fieldtype\": \"Data\", \"width\": 150},\n        {\"label\": \"Received Office\", \"fieldname\": \"received_office\", \"fieldtype\": \"Data\", \"width\": 150},\n        {\"label\": \"Collection Date\", \"fieldname\": \"collection_date\", \"fieldtype\": \"Date\", \"width\": 120},\n        {\"label\": \"Collection Program Name\", \"fieldname\": \"collection_program_name\", \"fieldtype\": \"Data\", \"width\": 200}\n    ]\n\n    # Fetch data\n    # Ensure field names here match your DocType exactly\n    data = frappe.db.sql(\"\"\"\n        SELECT \n            name, \n            target_lab, \n            district_office_name, \n            collection_date, \n            name_of_type \n        FROM `tabSoil Sample Collection` \n        ORDER BY name DESC\n    \"\"\", as_dict=True)\n\n    results = []\n    for i, row in enumerate(data, start=1):\n        results.append({\n            \"serial_number\": i,\n            \"sample_id\": row.name,\n            \"target_lab\": row.target_lab,\n            \"received_office\": row.district_office_name,\n            \"collection_date\": row.collection_date,\n            \"collection_program_name\": row.name_of_type\n        })\n\n    return columns, results",
+  "report_type": "Script Report",
+  "roles": [
+   {
+    "parent": "Department Samples Source Report",
+    "parentfield": "roles",
+    "parenttype": "Report",
+    "role": "System Manager"
+   },
+   {
+    "parent": "Department Samples Source Report",
+    "parentfield": "roles",
+    "parenttype": "Report",
+    "role": "Creator"
+   },
+   {
+    "parent": "Department Samples Source Report",
+    "parentfield": "roles",
+    "parenttype": "Report",
+    "role": "Lab Assistant"
+   },
+   {
+    "parent": "Department Samples Source Report",
+    "parentfield": "roles",
+    "parenttype": "Report",
+    "role": "Managing Director"
+   },
+   {
+    "parent": "Department Samples Source Report",
+    "parentfield": "roles",
+    "parenttype": "Report",
+    "role": "Assistant Director"
+   },
+   {
+    "parent": "Department Samples Source Report",
+    "parentfield": "roles",
+    "parenttype": "Report",
+    "role": "Research Assistant"
+   },
+   {
+    "parent": "Department Samples Source Report",
+    "parentfield": "roles",
+    "parenttype": "Report",
+    "role": "PSC Officer"
+   },
+   {
+    "parent": "Department Samples Source Report",
+    "parentfield": "roles",
+    "parenttype": "Report",
+    "role": "Senior Chemist"
+   },
+   {
+    "parent": "Department Samples Source Report",
+    "parentfield": "roles",
+    "parenttype": "Report",
+    "role": "Soil Intaker L1"
+   },
+   {
+    "parent": "Department Samples Source Report",
+    "parentfield": "roles",
+    "parenttype": "Report",
+    "role": "Asset & Stock Manager L1"
+   },
+   {
+    "parent": "Department Samples Source Report",
+    "parentfield": "roles",
+    "parenttype": "Report",
+    "role": "Soil Intaker L2"
+   }
+  ],
+  "timeout": 0
+ },
+ {
+  "add_total_row": 0,
+  "add_translate_data": 0,
+  "columns": [],
+  "disabled": 0,
+  "docstatus": 0,
+  "doctype": "Report",
+  "filters": [],
+  "is_standard": "Yes",
+  "javascript": null,
+  "json": "{}",
+  "letter_head": null,
+  "modified": "2026-07-16 11:52:37.340372",
+  "module": "Slis App",
+  "name": "Defective Sample Report",
+  "prepared_report": 0,
+  "query": "SELECT \n    name AS \"Sample ID:Link/Soil Sample Collection:150\", \n    status AS \"Status:Data:100\", \n    rejection_remarks AS \"Remark:Text:200\", \n    collection_date AS \"Date:Date:120\", \n    district_name AS \"District:Data:150\", \n    name_of_type AS \"Scheme/Program Name:Data:200\", \n    target_lab AS \"Target Lab:Data:150\",\n    lab_name AS \"Recieving Lab:Data:150\"\nFROM `tabSoil Sample Collection`\nWHERE status = 'Rejected'\nORDER BY collection_date DESC",
+  "ref_doctype": "Soil Sample Collection",
+  "reference_report": null,
+  "report_name": "Defective Sample Report",
+  "report_script": null,
+  "report_type": "Query Report",
+  "roles": [
+   {
+    "parent": "Defective Sample Report",
+    "parentfield": "roles",
+    "parenttype": "Report",
+    "role": "System Manager"
+   },
+   {
+    "parent": "Defective Sample Report",
+    "parentfield": "roles",
+    "parenttype": "Report",
+    "role": "Creator"
+   },
+   {
+    "parent": "Defective Sample Report",
+    "parentfield": "roles",
+    "parenttype": "Report",
+    "role": "Lab Assistant"
+   },
+   {
+    "parent": "Defective Sample Report",
+    "parentfield": "roles",
+    "parenttype": "Report",
+    "role": "Managing Director"
+   },
+   {
+    "parent": "Defective Sample Report",
+    "parentfield": "roles",
+    "parenttype": "Report",
+    "role": "Assistant Director"
+   },
+   {
+    "parent": "Defective Sample Report",
+    "parentfield": "roles",
+    "parenttype": "Report",
+    "role": "Research Assistant"
+   },
+   {
+    "parent": "Defective Sample Report",
+    "parentfield": "roles",
+    "parenttype": "Report",
+    "role": "PSC Officer"
+   },
+   {
+    "parent": "Defective Sample Report",
+    "parentfield": "roles",
+    "parenttype": "Report",
+    "role": "Senior Chemist"
+   },
+   {
+    "parent": "Defective Sample Report",
+    "parentfield": "roles",
+    "parenttype": "Report",
+    "role": "Soil Intaker L1"
+   },
+   {
+    "parent": "Defective Sample Report",
+    "parentfield": "roles",
+    "parenttype": "Report",
+    "role": "Asset & Stock Manager L1"
+   },
+   {
+    "parent": "Defective Sample Report",
+    "parentfield": "roles",
+    "parenttype": "Report",
+    "role": "Soil Intaker L2"
+   }
+  ],
+  "timeout": 0
+ },
+ {
+  "add_total_row": 0,
+  "add_translate_data": 0,
+  "columns": [],
+  "disabled": 0,
+  "docstatus": 0,
+  "doctype": "Report",
+  "filters": [],
+  "is_standard": "Yes",
+  "javascript": null,
+  "json": null,
+  "letter_head": null,
+  "modified": "2026-08-10 10:00:16.663065",
+  "module": "Slis App",
+  "name": "Department Office Report",
+  "prepared_report": 0,
+  "query": null,
+  "ref_doctype": "Soil Sample Collection",
+  "reference_report": null,
+  "report_name": "Department Office Report",
+  "report_script": null,
+  "report_type": "Script Report",
+  "roles": [
+   {
+    "parent": "Department Office Report",
+    "parentfield": "roles",
+    "parenttype": "Report",
+    "role": "Creator"
+   },
+   {
+    "parent": "Department Office Report",
+    "parentfield": "roles",
+    "parenttype": "Report",
+    "role": "System Manager"
+   },
+   {
+    "parent": "Department Office Report",
+    "parentfield": "roles",
+    "parenttype": "Report",
+    "role": "Research Assistant"
+   },
+   {
+    "parent": "Department Office Report",
+    "parentfield": "roles",
+    "parenttype": "Report",
+    "role": "Senior Chemist"
+   },
+   {
+    "parent": "Department Office Report",
+    "parentfield": "roles",
+    "parenttype": "Report",
+    "role": "Soil Intaker L1"
+   },
+   {
+    "parent": "Department Office Report",
+    "parentfield": "roles",
+    "parenttype": "Report",
+    "role": "Soil Intaker L2"
+   },
+   {
+    "parent": "Department Office Report",
+    "parentfield": "roles",
+    "parenttype": "Report",
+    "role": "Master Creator L2"
+   }
+  ],
+  "timeout": 0
+ }
+]

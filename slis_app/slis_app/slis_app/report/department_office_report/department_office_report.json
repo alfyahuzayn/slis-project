@@ -1,0 +1,46 @@
+{
+ "add_total_row": 0,
+ "add_translate_data": 0,
+ "columns": [],
+ "creation": "2026-08-10 10:00:16.663065",
+ "disabled": 0,
+ "docstatus": 0,
+ "doctype": "Report",
+ "filters": [],
+ "idx": 0,
+ "is_standard": "Yes",
+ "letter_head": null,
+ "modified": "2026-08-10 10:00:16.663065",
+ "modified_by": "Administrator",
+ "module": "Slis App",
+ "name": "Department Office Report",
+ "owner": "Administrator",
+ "prepared_report": 0,
+ "ref_doctype": "Soil Sample Collection",
+ "report_name": "Department Office Report",
+ "report_type": "Script Report",
+ "roles": [
+  {
+   "role": "Creator"
+  },
+  {
+   "role": "System Manager"
+  },
+  {
+   "role": "Research Assistant"
+  },
+  {
+   "role": "Senior Chemist"
+  },
+  {
+   "role": "Soil Intaker L1"
+  },
+  {
+   "role": "Soil Intaker L2"
+  },
+  {
+   "role": "Master Creator L2"
+  }
+ ],
+ "timeout": 0
+}

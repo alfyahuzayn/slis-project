@@ -1,0 +1,56 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "field:department_address",
+ "creation": "2026-07-03 15:27:39.477384",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "department_address",
+  "department_name"
+ ],
+ "fields": [
+  {
+   "fieldname": "department_address",
+   "fieldtype": "Data",
+   "label": "Department Address",
+   "options": "De",
+   "unique": 1
+  },
+  {
+   "fieldname": "department_name",
+   "fieldtype": "Link",
+   "label": "Department name",
+   "options": "District Office Names",
+   "unique": 1
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2026-07-03 15:27:39.477384",
+ "modified_by": "Administrator",
+ "module": "Slis App",
+ "name": "Department Office Address",
+ "naming_rule": "By fieldname",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

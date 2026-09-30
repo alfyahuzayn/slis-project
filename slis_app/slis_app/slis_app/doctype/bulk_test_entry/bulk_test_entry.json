@@ -1,0 +1,60 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2026-03-16 14:57:02.561204",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "register",
+  "scheme",
+  "bulk_test_entry_item"
+ ],
+ "fields": [
+  {
+   "fetch_from": "register.scheme_name",
+   "fieldname": "scheme",
+   "fieldtype": "Data",
+   "label": "Scheme"
+  },
+  {
+   "fieldname": "register",
+   "fieldtype": "Link",
+   "hidden": 1,
+   "label": "Sample Id",
+   "options": "Register"
+  },
+  {
+   "fieldname": "bulk_test_entry_item",
+   "fieldtype": "Table",
+   "label": "Bulk result",
+   "options": "Bulk Test Entry Item"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2026-03-18 10:29:53.681925",
+ "modified_by": "Administrator",
+ "module": "Slis App",
+ "name": "Bulk Test Entry",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

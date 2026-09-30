@@ -1,0 +1,23 @@
+{
+ "content": null,
+ "creation": "2026-03-09 11:22:12.276642",
+ "docstatus": 0,
+ "doctype": "Page",
+ "idx": 0,
+ "modified": "2026-03-09 11:22:25.779526",
+ "modified_by": "Administrator",
+ "module": "Slis App",
+ "name": "sample-status-dashbo",
+ "owner": "Administrator",
+ "page_name": "sample-status-dashbo",
+ "roles": [
+  {
+   "role": "Research Assistant"
+  }
+ ],
+ "script": null,
+ "standard": "Yes",
+ "style": null,
+ "system_page": 0,
+ "title": "Sample Status Dashboard"
+}

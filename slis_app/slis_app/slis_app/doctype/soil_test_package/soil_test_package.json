@@ -1,0 +1,115 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "field:test_name",
+ "creation": "2026-01-08 10:56:20.379590",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "test_name",
+  "abbr",
+  "linked_go_item",
+  "formula",
+  "target_unit",
+  "rate",
+  "description",
+  "variable_table",
+  "rating",
+  "included_tests",
+  "parameter_count"
+ ],
+ "fields": [
+  {
+   "fieldname": "test_name",
+   "fieldtype": "Data",
+   "label": "test name",
+   "unique": 1
+  },
+  {
+   "fetch_from": "linked_go_item.rate",
+   "fetch_if_empty": 1,
+   "fieldname": "rate",
+   "fieldtype": "Currency",
+   "label": "rate"
+  },
+  {
+   "fieldname": "description",
+   "fieldtype": "Small Text",
+   "label": "Description"
+  },
+  {
+   "fieldname": "formula",
+   "fieldtype": "Small Text",
+   "label": "formula"
+  },
+  {
+   "fieldname": "variable_table",
+   "fieldtype": "Table",
+   "label": "Variable Table",
+   "options": "Soil Test Variable"
+  },
+  {
+   "fieldname": "target_unit",
+   "fieldtype": "Select",
+   "label": "target unit",
+   "options": "\n%\nkg/ha\nppm"
+  },
+  {
+   "fieldname": "rating",
+   "fieldtype": "Table",
+   "label": "Rating",
+   "options": "Rating Rules"
+  },
+  {
+   "fieldname": "linked_go_item",
+   "fieldtype": "Link",
+   "label": "Linked Go Item",
+   "options": "Soil Service Item"
+  },
+  {
+   "fieldname": "included_tests",
+   "fieldtype": "Table",
+   "label": "Included Tests",
+   "options": "Soil Test Sub Entry"
+  },
+  {
+   "fieldname": "parameter_count",
+   "fieldtype": "Int",
+   "label": "Parameter Count",
+   "read_only": 1
+  },
+  {
+   "fieldname": "abbr",
+   "fieldtype": "Data",
+   "label": "Abbreviation"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2026-09-11 10:29:06.929372",
+ "modified_by": "Administrator",
+ "module": "Slis App",
+ "name": "Soil Test Package",
+ "naming_rule": "By fieldname",
+ "owner": "navaneethkg@icfoss.org",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

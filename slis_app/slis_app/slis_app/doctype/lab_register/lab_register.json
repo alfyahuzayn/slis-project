@@ -1,0 +1,314 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2026-02-08 22:41:34.672492",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "section_break_46aj",
+  "workflow_state",
+  "client_details_section",
+  "client",
+  "client_type",
+  "address",
+  "column_break_nxzn",
+  "mail_id",
+  "contact_number",
+  "common_section",
+  "date_of_collection",
+  "target_lab",
+  "file_number",
+  "reference_name",
+  "column_break_skhe",
+  "created_by",
+  "lab_name",
+  "district_office_name",
+  "farmer_section_section",
+  "farmer_name",
+  "department_section_section",
+  "type_of_collection",
+  "scheme_name",
+  "column_break_abub",
+  "campaign_name",
+  "campaign_date",
+  "consultancy_section_section",
+  "consultancy_type",
+  "agency_name",
+  "department_name",
+  "column_break_shbb",
+  "institution_name",
+  "name1",
+  "section_break_hhjr",
+  "crops_list",
+  "item_and_pricing_section",
+  "tests",
+  "test_and_result_section",
+  "test"
+ ],
+ "fields": [
+  {
+   "fieldname": "section_break_46aj",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "workflow_state",
+   "fieldtype": "Link",
+   "hidden": 1,
+   "label": "Workflow State",
+   "no_copy": 1,
+   "options": "Workflow State"
+  },
+  {
+   "fieldname": "client_details_section",
+   "fieldtype": "Section Break",
+   "label": "Client Details"
+  },
+  {
+   "fieldname": "client",
+   "fieldtype": "Link",
+   "hidden": 1,
+   "label": "Client",
+   "options": "Clients",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "client.client_type",
+   "fieldname": "client_type",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Client Type",
+   "read_only": 1,
+   "reqd": 1
+  },
+  {
+   "fetch_from": "client.address",
+   "fieldname": "address",
+   "fieldtype": "Small Text",
+   "label": "Address",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_nxzn",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "client.mail_id",
+   "fieldname": "mail_id",
+   "fieldtype": "Data",
+   "label": "Mail ID",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "client.contact_number",
+   "fieldname": "contact_number",
+   "fieldtype": "Data",
+   "label": "Contact Number",
+   "read_only": 1
+  },
+  {
+   "fieldname": "common_section",
+   "fieldtype": "Section Break",
+   "label": "Common"
+  },
+  {
+   "fieldname": "date_of_collection",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Date Of Collection",
+   "reqd": 1
+  },
+  {
+   "fieldname": "target_lab",
+   "fieldtype": "Link",
+   "label": "Target Lab",
+   "options": "Soil Laboratory"
+  },
+  {
+   "fieldname": "file_number",
+   "fieldtype": "Data",
+   "label": "File Number",
+   "mandatory_depends_on": "eval:doc.custom_tapal_stage ==\"Required\""
+  },
+  {
+   "fieldname": "reference_name",
+   "fieldtype": "Data",
+   "label": "Reference Name"
+  },
+  {
+   "fieldname": "column_break_skhe",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "created_by",
+   "fieldtype": "Link",
+   "label": "Created By",
+   "options": "Employee",
+   "read_only": 1
+  },
+  {
+   "fieldname": "lab_name",
+   "fieldtype": "Link",
+   "label": "Lab Name",
+   "options": "Soil Laboratory"
+  },
+  {
+   "fieldname": "district_office_name",
+   "fieldtype": "Link",
+   "label": "District Office Name",
+   "options": "District Office Names"
+  },
+  {
+   "fieldname": "farmer_section_section",
+   "fieldtype": "Section Break",
+   "label": "Farmer Section"
+  },
+  {
+   "fetch_from": "client.farmer_name",
+   "fieldname": "farmer_name",
+   "fieldtype": "Data",
+   "label": "Farmer Name",
+   "read_only": 1
+  },
+  {
+   "fieldname": "department_section_section",
+   "fieldtype": "Section Break",
+   "label": "Department Section"
+  },
+  {
+   "fetch_from": "client.type_of_collection",
+   "fieldname": "type_of_collection",
+   "fieldtype": "Select",
+   "label": "Type of Collection",
+   "options": "\nCampaign\nScheme\nRoutine Research",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "client.scheme_name",
+   "fieldname": "scheme_name",
+   "fieldtype": "Data",
+   "label": "Scheme Name",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_abub",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "client.campaign_name",
+   "fieldname": "campaign_name",
+   "fieldtype": "Data",
+   "label": "Campaign Name",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "client.campaign_date",
+   "fieldname": "campaign_date",
+   "fieldtype": "Date",
+   "label": "Date",
+   "read_only": 1
+  },
+  {
+   "fieldname": "consultancy_section_section",
+   "fieldtype": "Section Break",
+   "label": "Consultancy Section"
+  },
+  {
+   "fetch_from": "client.consultancy_type",
+   "fieldname": "consultancy_type",
+   "fieldtype": "Select",
+   "label": "Consultancy Type",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "client.agency_name",
+   "fieldname": "agency_name",
+   "fieldtype": "Data",
+   "label": "Agency Name",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "client.department_name",
+   "fieldname": "department_name",
+   "fieldtype": "Data",
+   "label": "Department Name",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_shbb",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "client.institution_name",
+   "fieldname": "institution_name",
+   "fieldtype": "Data",
+   "label": "Institution Name",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "client.name1",
+   "fieldname": "name1",
+   "fieldtype": "Data",
+   "label": "Name",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_hhjr",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "crops_list",
+   "fieldtype": "Table",
+   "label": "Crops List",
+   "options": "Crops"
+  },
+  {
+   "fieldname": "item_and_pricing_section",
+   "fieldtype": "Section Break",
+   "label": "Item and Pricing"
+  },
+  {
+   "fieldname": "tests",
+   "fieldtype": "Table",
+   "label": "Tests",
+   "options": "Test Details"
+  },
+  {
+   "fieldname": "test_and_result_section",
+   "fieldtype": "Section Break",
+   "label": "Test and Result"
+  },
+  {
+   "fieldname": "test",
+   "fieldtype": "Table",
+   "label": "test",
+   "options": "Soil Test Result Entry"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2026-03-10 17:23:03.770881",
+ "modified_by": "Administrator",
+ "module": "Slis App",
+ "name": "Lab Register",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

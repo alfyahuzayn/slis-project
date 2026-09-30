@@ -1,0 +1,409 @@
+/* ICFOSS Theme - Core Variables */
+/* @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap'); */
+
+:root {
+    --primary-color: #1A1208;        /* Forest green */
+    --primary-dark: #1c5500;         /* Deep forest green (sidebar/navbar) */
+    --primary-light: #3aac01;        /* Light green (hover accents) */
+    --body-bg: #F4F7F5;              /* Very light grey-green */
+    --text-main: #111827;            /* Deep charcoal */
+    --text-muted: #6b7280;           /* Muted grey for labels */
+    --border-color: #e2e8e4;         /* Subtle green-grey border */
+    --icon-stroke: #1a3c2b;          /* Sidebar icon color */
+    --right-arrow-color: #ffffff;
+
+    /* Arrow SVG for breadcrumbs */
+    --right-arrow-svg: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23ffffff' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='9 18 15 12 9 6'%3E%3C/polyline%3E%3C/svg%3E");
+
+    /* --app-font-family: 'Poppins', sans-serif; */
+}
+
+body, .desk-container, .page-container, .layout-main-section-wrapper {
+    background-color: var(--body-bg) !important;
+    /* background-image: none !important; */
+    /* font-family: var(--app-font-family) !important; */
+    color: var(--text-main) !important;
+}
+
+html body .desk-sidebar .sidebar-item-container .selected .sidebar-item-icon {
+    --icon-stroke: #1A1208;
+}
+
+html body .desk-sidebar .sidebar-item-container {
+    --icon-stroke: #ffffff;
+}
+
+/* 1. Hide any old or "unwanted" arrows */
+#navbar-breadcrumbs a:before,
+#navbar-breadcrumbs li:before {
+    content: none !important;
+    display:none
+}
+
+/* 2. Apply the arrow ONLY between items */
+#navbar-breadcrumbs li:not(:last-child)::after {
+    content: "" !important;
+    display: inline-block;
+    width: 8px;
+    height: 12px;
+    margin: 0 10px;
+    vertical-align: middle;
+
+    -webkit-mask-image: var(--right-arrow-svg);
+    mask-image: var(--right-arrow-svg);
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    background-color: #ffffff !important;
+    display: none !important;
+}
+
+/* 3. Hide arrow for very last item */
+#navbar-breadcrumbs li:last-child::after {
+    content: none !important;
+    display: none !important;
+
+}
+
+.form-section.card-section, .form-dashboard-section {
+    border-bottom: 1px solid var(--border-color);
+    padding: var(--padding-xs);
+    margin-bottom: 35px;
+}
+
+.std-form-layout>.form-layout>.form-page {
+    border-radius: var(--border-radius-md);
+    border: 1px solid #f4f7f5;
+    box-shadow: none;
+    background-color: #f4f7f5;
+}
+
+.page-head {
+    background: #f4f7f5;
+}
+
+/* for the top filter bar in list view */
+.page-form {
+    margin: 0;
+    padding: var(--padding-xs);
+    display: flex;
+    flex-wrap: wrap;
+    border-bottom: 1px solid var(--border-color);
+}
+
+
+.standard-sidebar .standard-sidebar-section .standard-sidebar-label, .desk-sidebar .standard-sidebar-section .standard-sidebar-label, .search-dialog .search-results .search-sidebar .standard-sidebar-section .standard-sidebar-label {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 10px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    font-weight: 600;
+    margin-top: 16px;
+    padding-left: 15px;
+    display: none;
+}
+
+
+/* add the line color in the bottom of the nuber card */
+/* Apply a green bottom border to all number cards */
+.widget-card-container .number-card, 
+.stat-card, 
+.widget-column .card {
+    border-bottom: 4px solid #28a745 !important;
+    border-bottom-left-radius: 8px !important;
+    border-bottom-right-radius: 8px !important;
+}
+
+/* Optional: Ensure the card doesn't have a default bottom border clashing */
+.widget-card-container .number-card {
+    border-bottom-style: solid !important;
+}
+
+
+.widget.quick-list-widget-box .refresh-list, .widget.quick-list-widget-box .filter-list, .widget.quick-list-widget-box .add-new {
+    /* background-color: #ffffff2c; */
+    cursor: pointer;
+    display: none;
+}
+
+
+/* Container for the Quick Actions links */
+.widget-body .link-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 20px;
+    margin-bottom: 10px;
+    border: 1px solid #d1d1d1;
+    border-radius: 8px;
+    text-decoration: none !important;
+    transition: all 0.3s ease;
+    background-color: #ffffff80;
+    color: #1c1c1c !important;
+    font-weight: 500;
+}
+
+.widget-body .link-item .selected{
+    background-color: #042f0d;
+}
+
+/* 1. Fix Hover Text Color */
+/* We target the link-item and force all text inside it to be white on hover */
+.widget-body .link-item:hover,
+.widget-body .link-item:hover .link-content,
+.widget-body .link-item:hover span {
+    background-color: #042f0d !important;
+    color: #ffffffef !important;
+}
+
+/* 2. Fix Selected Text Color */
+/* This ensures that when the 'selected' class is present, the text stays white */
+.widget-body .link-item.selected,
+.widget-body .link-item.selected .link-content,
+.widget-body .link-item.selected span {
+    background-color: #042f0d !important;
+    color: #ffffff !important;
+}
+
+/* Removing the default arrow icon (the shortcut arrow) */
+.widget-body .link-item .icon-sm {
+    display: none;
+}
+
+/* This adds the vertical gap between the button boxes */
+.widget-body .link-item {
+    margin-bottom: 12px !important; /* Increase this number for more space */
+    display: flex !important;
+    border: 1px solid #d1d1d1;
+    border-radius: 8px;
+    padding: 10px 15px;
+}
+
+/* Optional: Removes the margin from the very last button so there's no extra space at the bottom of the card */
+.widget-body .link-item:last-child {
+    margin-bottom: 0px !important;
+}
+
+/* To center the text and remove the default arrow if you want it to look exactly like your goal image */
+.widget-body .link-item .link-content {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.widget-body .link-item .link-arrow {
+    display: none !important; /* Hides that small diagonal arrow icon */
+}
+
+
+
+/* setting the new background image */
+
+body, .desk-container, .page-container, .layout-main-section-wrapper {
+    background-image: url('/assets/icfoss_erp_theme_1/assets/slis_login_bg.png') !important;
+    background-size: cover !important;
+    background-attachment: fixed !important;
+    background-repeat: no-repeat !important;
+    background-position: center !important;
+}
+
+
+/* 1. Make the major wrappers transparent so the body background shows through */
+.desk-container, 
+.page-container, 
+.page-body,
+.desk-sidebar {
+    background-color: transparent !important;
+}
+
+/* 2. Style the main content area (The "Glass" effect) */
+/* This gives the central area a semi-transparent white look so your data is readable */
+.layout-main-section {
+    background-color: rgba(255, 255, 255, 0) !important; 
+    border-radius: 16px;
+    margin: 20px;
+    padding: 20px !important;
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
+}
+
+/* 3. Adjust the sidebar to be semi-transparent as well */
+.layout-side-section {
+    background-color: rgba(26, 18, 8, 0) !important; /* Using your --primary-color with opacity */
+    border-right: none !important;
+}
+
+/* 4. Fix Workspace Header */
+.page-head {
+    background: transparent !important;
+    border-bottom: none !important;
+}
+
+
+
+/* Target the sidebar and ALL possible background layers within it */
+.layout-side-section, 
+.desk-sidebar, 
+.list-sidebar, 
+.sidebar-menu, 
+.standard-sidebar {
+    background-color: transparent !important;
+    background: transparent !important;
+    border-right: none !important;
+}
+
+/* Now apply the semi-transparent glass effect to the actual container */
+.desk-sidebar {
+    background-color: rgba(26, 18, 8, 0.4) !important; /* Adjusted opacity for better 'glass' feel */
+    backdrop-filter: blur(12px) !important;
+    -webkit-backdrop-filter: blur(12px) !important;
+    border-radius: 20px !important;
+    margin: 10px !important;
+    padding: 25px !important;
+    min-height: calc(100vh - 40px) !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important; /* Subtle border makes glass pop */
+}
+
+/* Ensure individual sidebar items don't have their own backgrounds */
+.sidebar-item-container, .sidebar-link {
+    background-color: transparent !important;
+}
+
+/* Force the parent row to not have a background */
+.row.layout-main {
+    background-color: transparent !important;
+}
+
+
+
+
+.widget, .card, .form-section, .shortcut-widget-box {
+    background: #ffffff57 !important;
+}
+
+/* new changes for the background colors  */
+
+/* form bg color */
+.std-form-layout.form-layout.form-page {
+    border-radius: var(--border-radius-md);
+    border: 1px solid #f4f7f5;
+    box-shadow: none;
+    background-color: #39393900;
+}
+
+/* activity bg */
+.new-timeline .activity-title, .new-timeline .timeline-actions {
+    margin-bottom: 0!important;
+    display: flex;
+    align-items: center;
+    min-height: 60px;
+    margin-left: 0!important;
+    background-color: #ffffff00;
+    padding-left: 0;
+}
+
+/* form bprder removal */
+.std-form-layout.form-layout.form-page {
+    border-radius: var(--border-radius-md);
+    border: 1px solid #f4f7f500;
+    box-shadow: none;
+    background-color: #39393900;
+}
+
+/* list view bg header */
+.page-form {
+    margin: 0;
+    padding: var(--padding-xs);
+    display: flex;
+    flex-wrap: wrap;
+    background-color: #f4f7f500;
+    border-bottom: 1px solid var(--border-color);
+}
+
+/* list view sidebar hide */
+
+/* Target only List views to hide the sidebar and expand the main section */
+[data-page-route^="List/"] .layout-side-section {
+    display: none !important;
+}
+
+[data-page-route^="List/"] .layout-main-section {
+    width: 100% !important;
+    flex: 0 0 100% !important;
+    max-width: 100% !important;
+    background: rgb(255 255 255 / 66%) !important;
+    backdrop-filter: blur(10px);
+}
+
+/* Optional: Hide the toggle button since it's no longer needed */
+[data-page-route^="List/"] .sidebar-toggle-btn {
+    display: none !important;
+}
+
+/* Make form sections transparent and remove the card shadow/border */
+.form-page .form-section.card-section {
+    background-color: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+}
+
+/* Ensure the inner columns also don't carry a background */
+.form-page .section-body {
+    background-color: transparent !important;
+}
+
+/* Optional: If you want to keep the input fields visible but remove the section container */
+.form-page .control-input-wrapper {
+    background-color: transparent !important;
+}
+
+.form-page .form-section.card-section {
+    background-color: rgba(255, 255, 255, 0.2) !important; /* Semi-transparent */
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.new-timeline {
+    position: relative;
+    padding-top: var(--padding-lg);
+    display: none;
+}
+
+.comment-box {
+    margin-top: var(--margin-lg);
+    padding: 0;
+    display: none;
+}
+
+
+
+/* dropdown button z-index fix */
+.form-page .form-section.card-section {
+    background-color: rgba(255, 255, 255, 0.2) !important;
+    backdrop-filter: none;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* hide the breadcrumb item in navbar */
+#navbar-breadcrumbs a {
+    color: white !important;
+    display: none;
+}
+
+/* Add SLIS text next to navbar logo */
+.navbar-brand::after {
+    content: "Soil Laboratory Information System";
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: 500;
+    letter-spacing: 2px;
+    margin-left: 8px;
+    vertical-align: middle;
+}
+
+
+
+/* Hide + New button for everyone by default */
+/* please uncomment it when any edits in the workspace is needed and comment it back when the work is done to avoid any confusion for the users */
+/* .workspace-footer {
+    display: none !important;
+} */

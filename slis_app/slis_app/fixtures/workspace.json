@@ -1,0 +1,114 @@
+[
+ {
+  "charts": [],
+  "content": "[{\"id\":\"XnF9AlWeB6\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Soil Intake Dashboard</span>\",\"col\":12}},{\"id\":\"qVByJMj3jP\",\"type\":\"custom_block\",\"data\":{\"custom_block_name\":\"My Dashboard\",\"col\":12}}]",
+  "custom_blocks": [
+   {
+    "custom_block_name": "My Dashboard",
+    "label": "My Dashboard",
+    "parent": "Sample Intake Dashboard",
+    "parentfield": "custom_blocks",
+    "parenttype": "Workspace"
+   }
+  ],
+  "docstatus": 0,
+  "doctype": "Workspace",
+  "for_user": "",
+  "hide_custom": 0,
+  "icon": "stock",
+  "indicator_color": "",
+  "is_hidden": 0,
+  "label": "Sample Intake Dashboard",
+  "links": [],
+  "modified": "2026-07-16 10:21:11.666110",
+  "module": "Slis App",
+  "name": "Sample Intake Dashboard",
+  "number_cards": [],
+  "parent_page": "",
+  "public": 1,
+  "quick_lists": [],
+  "restrict_to_domain": null,
+  "roles": [
+   {
+    "parent": "Sample Intake Dashboard",
+    "parentfield": "roles",
+    "parenttype": "Workspace",
+    "role": "Soil Intaker L1"
+   },
+   {
+    "parent": "Sample Intake Dashboard",
+    "parentfield": "roles",
+    "parenttype": "Workspace",
+    "role": "Soil Tester L1"
+   },
+   {
+    "parent": "Sample Intake Dashboard",
+    "parentfield": "roles",
+    "parenttype": "Workspace",
+    "role": "Soil Intaker L2"
+   },
+   {
+    "parent": "Sample Intake Dashboard",
+    "parentfield": "roles",
+    "parenttype": "Workspace",
+    "role": "Soil Tester L2"
+   }
+  ],
+  "sequence_id": 39.0,
+  "shortcuts": [],
+  "title": "Sample Intake Dashboard"
+ },
+ {
+  "charts": [],
+  "content": "[{\"id\":\"QroBzJ36xB\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Lab Activitites</span>\",\"col\":12}},{\"id\":\"FTFU1NNJ9e\",\"type\":\"custom_block\",\"data\":{\"custom_block_name\":\"lab activities\",\"col\":12}}]",
+  "custom_blocks": [
+   {
+    "custom_block_name": "lab activities",
+    "label": "lab activities",
+    "parent": "Lab Activitites",
+    "parentfield": "custom_blocks",
+    "parenttype": "Workspace"
+   }
+  ],
+  "docstatus": 0,
+  "doctype": "Workspace",
+  "for_user": "",
+  "hide_custom": 0,
+  "icon": "stock",
+  "indicator_color": "green",
+  "is_hidden": 0,
+  "label": "Lab Activitites",
+  "links": [],
+  "modified": "2026-06-29 10:56:21.436094",
+  "module": "Slis App",
+  "name": "Lab Activitites",
+  "number_cards": [],
+  "parent_page": "",
+  "public": 1,
+  "quick_lists": [],
+  "restrict_to_domain": null,
+  "roles": [
+   {
+    "parent": "Lab Activitites",
+    "parentfield": "roles",
+    "parenttype": "Workspace",
+    "role": "Administrator"
+   },
+   {
+    "parent": "Lab Activitites",
+    "parentfield": "roles",
+    "parenttype": "Workspace",
+    "role": "slis_admin"
+   },
+   {
+    "parent": "Lab Activitites",
+    "parentfield": "roles",
+    "parenttype": "Workspace",
+    "role": "Managing Director"
+   }
+  ],
+  "sequence_id": 37.0,
+  "shortcuts": [],
+  "title": "Lab Activitites"
+ }
+]

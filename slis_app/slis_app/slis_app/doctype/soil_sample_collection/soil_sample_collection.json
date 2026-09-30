@@ -1,0 +1,935 @@
+{
+ "actions": [],
+ "allow_import": 1,
+ "allow_rename": 1,
+ "creation": "2026-02-08 18:17:21.736103",
+ "default_view": "List",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "client_details_section",
+  "column_break_rntr",
+  "client_type",
+  "campaign_date",
+  "client",
+  "farmer_name",
+  "name1",
+  "institution_name",
+  "agency_name",
+  "department_name",
+  "client_name",
+  "column_break_qoci",
+  "address",
+  "mail_id",
+  "contact_number",
+  "id_proof",
+  "aadhar_card_number",
+  "moved_to_test",
+  "column_break_nxzn",
+  "consultancy_type",
+  "status",
+  "sample_id",
+  "is_master_sample",
+  "is_generated_sample",
+  "parent_sample",
+  "reference_sample_id",
+  "master_profile_sample",
+  "sc_verified",
+  "section_break_scjx",
+  "type_of_collection",
+  "department_details_section",
+  "column_break_iigc",
+  "name_of_type",
+  "collection_date",
+  "lab_code_prefix",
+  "lab_code_start",
+  "number_of_samples",
+  "rejection_remarks",
+  "enable_profile_sample",
+  "column_break_dxcw",
+  "district_name",
+  "local_body",
+  "block_name",
+  "panchayath_name",
+  "total_parameter_count",
+  "village_name",
+  "section_break_wpux",
+  "html",
+  "section_break_usar",
+  "sample_data",
+  "sample_related_section",
+  "date_of_collection",
+  "state",
+  "district",
+  "local_body_type",
+  "location",
+  "panchayath",
+  "block",
+  "taluk",
+  "municipality",
+  "corporation",
+  "village",
+  "latitude",
+  "longitude",
+  "elevation",
+  "column_break_sjql",
+  "survey_number",
+  "ward_number",
+  "plot_size",
+  "land_type",
+  "soil_type",
+  "soil_texture",
+  "is_irrigation_facility_available",
+  "irrigation_type",
+  "catchment",
+  "sub_watershed",
+  "section_break_vuxt",
+  "table_bdxv",
+  "section_break_wsin",
+  "column_break_obws",
+  "major_crops",
+  "locally_available_fertiliser_details",
+  "name_of_the_estate",
+  "farmers_signature",
+  "sample_collection_officers_signature",
+  "sample_collection_officers_name",
+  "sample_collection_officers_designation",
+  "section_break_hhjr",
+  "crops_list",
+  "item_and_pricing_section",
+  "column_break_pecc",
+  "tests",
+  "amount_payable",
+  "discount_percentage",
+  "payment_details",
+  "dates_section",
+  "assistant_director_date",
+  "assigned_to_lab_date",
+  "assigned_to_ra__date",
+  "completed_date",
+  "return_to_psc_date",
+  "return_to_sc_date",
+  "common_section",
+  "lab_register_created",
+  "allow_send_back_reason",
+  "verified_physical_sample",
+  "psc_entry_target_lab",
+  "lab_name",
+  "district_office_name",
+  "created_by",
+  "ad_is_psc",
+  "current_unit",
+  "amended_from",
+  "target_lab",
+  "file_number",
+  "reference_name",
+  "district_e_office_number",
+  "column_break_skhe",
+  "employee_type",
+  "send_back_reason",
+  "creator_user",
+  "transfer_status",
+  "is_transferred",
+  "is_returned"
+ ],
+ "fields": [
+  {
+   "fieldname": "common_section",
+   "fieldtype": "Section Break",
+   "label": "Office Use Only"
+  },
+  {
+   "fieldname": "client",
+   "fieldtype": "Link",
+   "hidden": 1,
+   "label": "Client",
+   "options": "Clients"
+  },
+  {
+   "fetch_from": "client.client_type",
+   "fieldname": "client_type",
+   "fieldtype": "Data",
+   "in_global_search": 1,
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Client Type",
+   "read_only": 1,
+   "reqd": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "lab_register_created",
+   "fieldtype": "Check",
+   "label": "Lab Register Created",
+   "read_only": 1
+  },
+  {
+   "default": "1",
+   "fieldname": "allow_send_back_reason",
+   "fieldtype": "Check",
+   "hidden": 1,
+   "label": "Allow send back reason"
+  },
+  {
+   "fieldname": "psc_entry_target_lab",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "psc entry target lab",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "ad_is_psc",
+   "fieldtype": "Check",
+   "hidden": 1,
+   "label": "AD is PSC"
+  },
+  {
+   "fieldname": "current_unit",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "Current Unit"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Soil Sample Collection",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  },
+  {
+   "depends_on": "eval:doc.client_type==\"Department\"",
+   "fieldname": "target_lab",
+   "fieldtype": "Link",
+   "label": "Target Lab",
+   "mandatory_depends_on": "eval:doc.client_type==\"Department\"",
+   "options": "Soil Laboratory"
+  },
+  {
+   "depends_on": "eval:doc.status==\"Enter File number\" || doc.file_number\n",
+   "fieldname": "file_number",
+   "fieldtype": "Data",
+   "label": "E office File Number"
+  },
+  {
+   "fieldname": "column_break_skhe",
+   "fieldtype": "Column Break",
+   "read_only": 1
+  },
+  {
+   "fieldname": "employee_type",
+   "fieldtype": "Select",
+   "label": "Employee Type",
+   "options": "\nLab\nDistrict Office",
+   "read_only": 1
+  },
+  {
+   "fieldname": "created_by",
+   "fieldtype": "Data",
+   "label": "Created By",
+   "options": "Employee",
+   "read_only": 1
+  },
+  {
+   "depends_on": "eval:doc.client_type==\"Department\"",
+   "fieldname": "send_back_reason",
+   "fieldtype": "Small Text",
+   "label": "Send Back Reason"
+  },
+  {
+   "depends_on": "eval:doc.employee_type == \"Lab\"",
+   "fieldname": "lab_name",
+   "fieldtype": "Link",
+   "label": "Lab Name",
+   "options": "Soil Laboratory",
+   "read_only": 1
+  },
+  {
+   "depends_on": "eval:doc.employee_type == \"District Office\"",
+   "fieldname": "district_office_name",
+   "fieldtype": "Link",
+   "label": "District Office Name",
+   "options": "District Office Names",
+   "read_only": 1
+  },
+  {
+   "fieldname": "survey_number",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Survey Number"
+  },
+  {
+   "fieldname": "ward_number",
+   "fieldtype": "Data",
+   "label": "Ward Number"
+  },
+  {
+   "fieldname": "plot_size",
+   "fieldtype": "Data",
+   "label": "Plot Size ( in cent )"
+  },
+  {
+   "fieldname": "district",
+   "fieldtype": "Link",
+   "label": "District",
+   "options": "District"
+  },
+  {
+   "fieldname": "local_body_type",
+   "fieldtype": "Select",
+   "label": "Local Body Type",
+   "options": "\nMunicipality\nCorporation\nPanchayath"
+  },
+  {
+   "fieldname": "panchayath",
+   "fieldtype": "Link",
+   "label": "Panchayath",
+   "options": "Panchayath"
+  },
+  {
+   "depends_on": "eval:doc.local_body_type==\"Panchayath\"",
+   "fieldname": "village",
+   "fieldtype": "Link",
+   "label": "Village",
+   "options": "Village"
+  },
+  {
+   "depends_on": "eval:doc.client_type != 'Department'",
+   "fieldname": "item_and_pricing_section",
+   "fieldtype": "Section Break",
+   "label": "Test Request and Pricing"
+  },
+  {
+   "fieldname": "tests",
+   "fieldtype": "Table",
+   "label": "Tests",
+   "options": "Test Details"
+  },
+  {
+   "fieldname": "reference_name",
+   "fieldtype": "Data",
+   "label": "Reference Name"
+  },
+  {
+   "fetch_from": "client.address",
+   "fetch_if_empty": 1,
+   "fieldname": "address",
+   "fieldtype": "Small Text",
+   "label": "Address",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "client.mail_id",
+   "fetch_if_empty": 1,
+   "fieldname": "mail_id",
+   "fieldtype": "Data",
+   "label": "Mail ID",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "client.contact_number",
+   "fieldname": "contact_number",
+   "fieldtype": "Data",
+   "label": "Contact Number"
+  },
+  {
+   "fieldname": "farmer_name",
+   "fieldtype": "Text",
+   "hidden": 1,
+   "label": "Farmer Name",
+   "read_only": 1
+  },
+  {
+   "fieldname": "type_of_collection",
+   "fieldtype": "Select",
+   "label": "Type of Collection",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "client.campaign_date",
+   "fieldname": "campaign_date",
+   "fieldtype": "Date",
+   "label": "Date",
+   "read_only": 1
+  },
+  {
+   "fieldname": "corporation",
+   "fieldtype": "Link",
+   "label": "Corporation",
+   "options": "Corporation"
+  },
+  {
+   "fieldname": "municipality",
+   "fieldtype": "Link",
+   "label": "Municipality",
+   "options": "Municipality"
+  },
+  {
+   "fetch_from": "client.consultancy_type",
+   "fieldname": "consultancy_type",
+   "fieldtype": "Select",
+   "label": "Consultancy Type",
+   "read_only": 1
+  },
+  {
+   "fieldname": "agency_name",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "Agency Name",
+   "read_only": 1
+  },
+  {
+   "fieldname": "department_name",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "Department Name",
+   "read_only": 1
+  },
+  {
+   "fieldname": "institution_name",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "Institution Name",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "client.name_field",
+   "fieldname": "name1",
+   "fieldtype": "Data",
+   "label": "Name",
+   "read_only": 1
+  },
+  {
+   "fieldname": "client_details_section",
+   "fieldtype": "Section Break",
+   "label": "Client Details"
+  },
+  {
+   "fieldname": "column_break_nxzn",
+   "fieldtype": "Column Break"
+  },
+  {
+   "depends_on": "eval:doc.scheme_name != \"MAM\"",
+   "fieldname": "section_break_hhjr",
+   "fieldtype": "Section Break"
+  },
+  {
+   "depends_on": "eval:doc.client_type != 'Department'",
+   "fieldname": "crops_list",
+   "fieldtype": "Table",
+   "label": "Crops",
+   "options": "Crops"
+  },
+  {
+   "fieldname": "latitude",
+   "fieldtype": "Float",
+   "label": "Latitude",
+   "precision": "9"
+  },
+  {
+   "fieldname": "longitude",
+   "fieldtype": "Float",
+   "label": "Longitude",
+   "precision": "9"
+  },
+  {
+   "depends_on": "eval:doc.scheme_name == \"MAM\"",
+   "fieldname": "aadhar_card_number",
+   "fieldtype": "Data",
+   "label": "Aadhar Card Number"
+  },
+  {
+   "depends_on": "eval:doc.scheme_name == \"MAM\"",
+   "fieldname": "client_name",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "Client Name"
+  },
+  {
+   "fieldname": "land_type",
+   "fieldtype": "Select",
+   "label": "Land Type",
+   "options": "\nResidential\nAgricultural Land\nFlat\nInclined\nValley\nWet Land\nGarden Land\nConverted Land"
+  },
+  {
+   "depends_on": "eval:doc.client_type == \"Department\"",
+   "fieldname": "soil_texture",
+   "fieldtype": "Data",
+   "label": "Soil Texture"
+  },
+  {
+   "depends_on": "eval:doc.client_type == \"Department\"",
+   "fieldname": "soil_type",
+   "fieldtype": "Data",
+   "label": "Soil Type"
+  },
+  {
+   "depends_on": "eval:doc.client_type == \"Department\"",
+   "fieldname": "is_irrigation_facility_available",
+   "fieldtype": "Select",
+   "label": "Is irrigation facility available?",
+   "options": "Yes\nNo"
+  },
+  {
+   "depends_on": "eval:doc.scheme_name == \"MAM\" && doc.is_irrigation_facility_available == \"Yes\"",
+   "fieldname": "irrigation_type",
+   "fieldtype": "Select",
+   "label": "Irrigation Type",
+   "options": "\nWell\nBore well\nCanal\nOthers"
+  },
+  {
+   "depends_on": "eval:doc.client_type != 'Department'",
+   "fieldname": "section_break_wsin",
+   "fieldtype": "Section Break"
+  },
+  {
+   "depends_on": "eval:doc.scheme_name == \"MAM\"",
+   "fieldname": "major_crops",
+   "fieldtype": "Table",
+   "label": "Major Crops",
+   "options": "Major Crops"
+  },
+  {
+   "depends_on": "eval:doc.scheme_name == \"MAM\"",
+   "fieldname": "column_break_obws",
+   "fieldtype": "Column Break"
+  },
+  {
+   "depends_on": "eval:doc.scheme_name == \"MAM\"",
+   "fieldname": "locally_available_fertiliser_details",
+   "fieldtype": "Table",
+   "label": "Locally Available Fertiliser Details",
+   "options": "Locally Available Fertiliser"
+  },
+  {
+   "depends_on": "eval:doc.scheme_name == \"MAM\"",
+   "fieldname": "name_of_the_estate",
+   "fieldtype": "Data",
+   "label": "Name of the Estate"
+  },
+  {
+   "depends_on": "eval:doc.scheme_name == \"MAM\"",
+   "fieldname": "farmers_signature",
+   "fieldtype": "Attach",
+   "label": "Farmer's Signature"
+  },
+  {
+   "depends_on": "eval:doc.scheme_name == \"MAM\"",
+   "fieldname": "sample_collection_officers_signature",
+   "fieldtype": "Attach",
+   "label": "Sample collection officer's signature"
+  },
+  {
+   "depends_on": "eval:doc.scheme_name == \"MAM\"",
+   "fieldname": "sample_collection_officers_name",
+   "fieldtype": "Data",
+   "label": "Sample collection officer's name"
+  },
+  {
+   "depends_on": "eval:doc.scheme_name == \"MAM\"",
+   "fieldname": "sample_collection_officers_designation",
+   "fieldtype": "Data",
+   "label": "Sample collection officer's designation"
+  },
+  {
+   "fieldname": "column_break_pecc",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_sjql",
+   "fieldtype": "Column Break"
+  },
+  {
+   "depends_on": "eval:doc.client_type != 'Department'",
+   "fieldname": "sample_related_section",
+   "fieldtype": "Section Break",
+   "label": "Plot Related Data"
+  },
+  {
+   "depends_on": "eval:doc.scheme_name ==\"NSMP\"",
+   "fieldname": "state",
+   "fieldtype": "Data",
+   "label": "State"
+  },
+  {
+   "depends_on": "eval:doc.scheme_name ==\"NSMP\"",
+   "fieldname": "elevation",
+   "fieldtype": "Data",
+   "label": "Elevation"
+  },
+  {
+   "depends_on": "eval:doc.scheme_name ==\"NSMP\"",
+   "fieldname": "catchment",
+   "fieldtype": "Data",
+   "label": "Catchment "
+  },
+  {
+   "depends_on": "eval:doc.scheme_name ==\"NSMP\"",
+   "fieldname": "sub_watershed",
+   "fieldtype": "Data",
+   "label": "Sub watershed"
+  },
+  {
+   "depends_on": "eval:doc.scheme_name == \"NSMP\"",
+   "fieldname": "location",
+   "fieldtype": "Data",
+   "label": "Location"
+  },
+  {
+   "depends_on": "eval:doc.scheme_name == \"NSMP\"",
+   "fieldname": "block",
+   "fieldtype": "Data",
+   "label": "Block"
+  },
+  {
+   "depends_on": "eval:doc.scheme_name == \"NSMP\"",
+   "fieldname": "taluk",
+   "fieldtype": "Data",
+   "label": "Taluk"
+  },
+  {
+   "depends_on": "eval: doc.client_type != \"Department\"",
+   "fieldname": "amount_payable",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "Amount Payable"
+  },
+  {
+   "depends_on": "eval: doc.client_type != \"Department\"",
+   "fieldname": "discount_percentage",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "Discount % "
+  },
+  {
+   "fieldname": "section_break_vuxt",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "table_bdxv",
+   "fieldtype": "Table",
+   "hidden": 1,
+   "options": "GO Service list"
+  },
+  {
+   "depends_on": "eval:doc.client_type =='Consultancy'",
+   "fieldname": "id_proof",
+   "fieldtype": "Attach",
+   "label": "Id Proof"
+  },
+  {
+   "fieldname": "dates_section",
+   "fieldtype": "Section Break",
+   "label": "Tracking Details"
+  },
+  {
+   "fieldname": "assigned_to_lab_date",
+   "fieldtype": "Date",
+   "label": "Assigned to Lab Date",
+   "read_only": 1
+  },
+  {
+   "fieldname": "completed_date",
+   "fieldtype": "Date",
+   "label": "Completed Date",
+   "read_only": 1
+  },
+  {
+   "fieldname": "return_to_sc_date",
+   "fieldtype": "Date",
+   "label": "Return to SC Date",
+   "read_only": 1
+  },
+  {
+   "fieldname": "return_to_psc_date",
+   "fieldtype": "Date",
+   "label": "Return to PSC Date",
+   "read_only": 1
+  },
+  {
+   "fieldname": "creator_user",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "Creator User"
+  },
+  {
+   "fieldname": "assigned_to_ra__date",
+   "fieldtype": "Date",
+   "label": "Assigned to RA  Date",
+   "read_only": 1
+  },
+  {
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "hidden": 1,
+   "label": "status",
+   "options": "\nDraft\nSave\nEnter File number\nSample Verified\nWith Senior Chemist\nWith Assistant Director\nWith Director\nWith Research Assistant\nTransferred\nReturned\nTest Completed\nUnder Lab Verification\nSC Verifying Results\nRejected\nSC Verified Results\nAD Verified Results\nAD Verifying Results\nReady to Publish\nResult Published\nCancelled"
+  },
+  {
+   "fieldname": "total_parameter_count",
+   "fieldtype": "Int",
+   "hidden": 1,
+   "label": "Total Parameter Count",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_rntr",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_qoci",
+   "fieldtype": "Column Break"
+  },
+  {
+   "depends_on": "eval:doc.client_type != 'Farmer'",
+   "fieldname": "name_of_type",
+   "fieldtype": "Data",
+   "label": "Scheme/Programs",
+   "read_only": 1
+  },
+  {
+   "fieldname": "department_details_section",
+   "fieldtype": "Section Break"
+  },
+  {
+   "depends_on": "eval:doc.client_type != 'Farmer'",
+   "fieldname": "district_name",
+   "fieldtype": "Link",
+   "label": "District Name",
+   "options": "District"
+  },
+  {
+   "depends_on": "eval:doc.client_type != 'Farmer'",
+   "fieldname": "local_body",
+   "fieldtype": "Select",
+   "label": "Local Body",
+   "options": "\nBlock\nPanchayath"
+  },
+  {
+   "depends_on": "eval:doc.client_type == 'Department'",
+   "fieldname": "panchayath_name",
+   "fieldtype": "Link",
+   "label": "Panchayath",
+   "options": "Panchayath"
+  },
+  {
+   "depends_on": "eval:doc.client_type == 'Department'",
+   "fieldname": "block_name",
+   "fieldtype": "Link",
+   "label": "Block",
+   "options": "Block"
+  },
+  {
+   "depends_on": "eval:doc.client_type != 'Consultancy'",
+   "fieldname": "number_of_samples",
+   "fieldtype": "Int",
+   "label": "Number of Samples"
+  },
+  {
+   "fieldname": "html",
+   "fieldtype": "HTML",
+   "label": "HTML"
+  },
+  {
+   "depends_on": "eval:doc.client_type == 'Department'",
+   "fieldname": "section_break_usar",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "sample_data",
+   "fieldtype": "Table",
+   "label": "Sample Data",
+   "options": "Sample Data"
+  },
+  {
+   "fieldname": "lab_code_prefix",
+   "fieldtype": "Link",
+   "label": "Lab Code Prefix",
+   "options": "Lab Code Prefix"
+  },
+  {
+   "fieldname": "lab_code_start",
+   "fieldtype": "Int",
+   "label": "Lab code Start"
+  },
+  {
+   "depends_on": "eval:doc.client_type != 'Farmer'",
+   "fieldname": "collection_date",
+   "fieldtype": "Date",
+   "label": "Collection Date"
+  },
+  {
+   "fieldname": "section_break_scjx",
+   "fieldtype": "Section Break"
+  },
+  {
+   "depends_on": "eval:doc.client_type == 'Farmer'",
+   "fieldname": "date_of_collection",
+   "fieldtype": "Date",
+   "label": "Date of Collection "
+  },
+  {
+   "fieldname": "payment_details",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "Payment Details"
+  },
+  {
+   "fieldname": "sample_id",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Sample ID"
+  },
+  {
+   "default": "0",
+   "fieldname": "moved_to_test",
+   "fieldtype": "Check",
+   "hidden": 1,
+   "label": "Moved to Test"
+  },
+  {
+   "default": "0",
+   "fieldname": "verified_physical_sample",
+   "fieldtype": "Check",
+   "label": "Verified Physical Sample"
+  },
+  {
+   "default": "1",
+   "fieldname": "is_master_sample",
+   "fieldtype": "Check",
+   "label": "Is Master Sample"
+  },
+  {
+   "default": "0",
+   "fieldname": "is_generated_sample",
+   "fieldtype": "Check",
+   "label": "Is Generated Sample"
+  },
+  {
+   "fieldname": "parent_sample",
+   "fieldtype": "Link",
+   "label": "Parent Sample",
+   "options": "Soil Sample Collection"
+  },
+  {
+   "fieldname": "reference_sample_id",
+   "fieldtype": "Data",
+   "label": "Reference Sample Id"
+  },
+  {
+   "fieldname": "column_break_dxcw",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_iigc",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "transfer_status",
+   "fieldtype": "Select",
+   "label": "Transfer Status"
+  },
+  {
+   "default": "0",
+   "fieldname": "is_transferred",
+   "fieldtype": "Check",
+   "label": "Is Transferred"
+  },
+  {
+   "default": "0",
+   "fieldname": "is_returned",
+   "fieldtype": "Check",
+   "label": "Is Returned"
+  },
+  {
+   "fieldname": "section_break_wpux",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "village_name",
+   "fieldtype": "Data",
+   "label": "Village Name"
+  },
+  {
+   "depends_on": "eval:doc.client_type==\"Department\" && (doc.status==\"Under Lab Verification\" || doc.status==\"Rejected\")",
+   "fieldname": "rejection_remarks",
+   "fieldtype": "Small Text",
+   "label": "Rejection Remarks"
+  },
+  {
+   "depends_on": "eval:doc.client_type != 'Farmer' & doc.client_type != 'Consultancy'",
+   "fieldname": "district_e_office_number",
+   "fieldtype": "Data",
+   "label": "District E office Number"
+  },
+  {
+   "default": "0",
+   "depends_on": "eval:doc.client_type == 'Department'",
+   "fieldname": "enable_profile_sample",
+   "fieldtype": "Check",
+   "label": "Enable Profile Sample "
+  },
+  {
+   "default": "0",
+   "fieldname": "master_profile_sample",
+   "fieldtype": "Check",
+   "label": "Master Profile Sample"
+  },
+  {
+   "default": "0",
+   "fieldname": "sc_verified",
+   "fieldtype": "Check",
+   "label": "SC Verified"
+  },
+  {
+   "fieldname": "assistant_director_date",
+   "fieldtype": "Date",
+   "label": "Assistant Director Date",
+   "read_only": 1
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2026-09-16 14:09:30.883878",
+ "modified_by": "Administrator",
+ "module": "Slis App",
+ "name": "Soil Sample Collection",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Creator",
+   "select": 1,
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "reference_sample_id"
+}

@@ -1,0 +1,61 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "field:category_name",
+ "creation": "2026-02-09 12:08:15.901072",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "section_break_bvcd",
+  "category_name",
+  "go_rate_field"
+ ],
+ "fields": [
+  {
+   "fieldname": "section_break_bvcd",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "category_name",
+   "fieldtype": "Data",
+   "label": "Category Name",
+   "unique": 1
+  },
+  {
+   "fieldname": "go_rate_field",
+   "fieldtype": "Select",
+   "label": "GO Rate Field",
+   "options": "\ngovt_rate\nedu_rate\nphd_rate\nstudent_rate\nfull_rate"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2026-02-09 12:11:51.983571",
+ "modified_by": "Administrator",
+ "module": "Slis App",
+ "name": "Client Categories",
+ "naming_rule": "By fieldname",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

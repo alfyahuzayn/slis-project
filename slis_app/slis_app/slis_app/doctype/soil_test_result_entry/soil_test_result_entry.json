@@ -1,0 +1,79 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2026-02-06 15:49:42.509576",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "test_item",
+  "formula",
+  "final_result",
+  "unit",
+  "status",
+  "status_malayalam",
+  "criteria_reference"
+ ],
+ "fields": [
+  {
+   "fieldname": "test_item",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Test Item",
+   "options": "Soil Test Package"
+  },
+  {
+   "fetch_from": "test_item.formula",
+   "fieldname": "formula",
+   "fieldtype": "Small Text",
+   "in_list_view": 1,
+   "label": "Formula"
+  },
+  {
+   "fieldname": "final_result",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "Final Result",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "test_item.target_unit",
+   "fieldname": "unit",
+   "fieldtype": "Data",
+   "label": "Unit"
+  },
+  {
+   "fieldname": "status",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Status"
+  },
+  {
+   "fieldname": "status_malayalam",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "status malayalam"
+  },
+  {
+   "fieldname": "criteria_reference",
+   "fieldtype": "Small Text",
+   "in_list_view": 1,
+   "label": "criteria reference"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2026-03-03 21:27:14.316197",
+ "modified_by": "Administrator",
+ "module": "Slis App",
+ "name": "Soil Test Result Entry",
+ "owner": "Administrator",
+ "permissions": [],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

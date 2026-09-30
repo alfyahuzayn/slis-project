@@ -1,0 +1,42 @@
+{
+ "charts": [],
+ "content": "[{\"id\":\"prQXsYJ06p\",\"type\":\"custom_block\",\"data\":{\"custom_block_name\":\"financial year selection\",\"col\":12}},{\"id\":\"da1uGg6u1S\",\"type\":\"custom_block\",\"data\":{\"custom_block_name\":\"Lab-wise Asset Category Distribution\",\"col\":12}}]",
+ "creation": "2026-05-14 16:10:32.624998",
+ "custom_blocks": [
+  {
+   "custom_block_name": "financial year selection",
+   "label": "financial year selection"
+  },
+  {
+   "custom_block_name": "Lab-wise Asset Category Distribution",
+   "label": "Lab-wise Asset Category Distribution"
+  }
+ ],
+ "docstatus": 0,
+ "doctype": "Workspace",
+ "for_user": "",
+ "hide_custom": 0,
+ "icon": "assets",
+ "idx": 0,
+ "indicator_color": "green",
+ "is_hidden": 0,
+ "label": "Asset_Management",
+ "links": [],
+ "modified": "2026-06-10 10:09:12.550991",
+ "modified_by": "Administrator",
+ "module": "labassets",
+ "name": "Asset_Management",
+ "number_cards": [],
+ "owner": "Administrator",
+ "parent_page": "",
+ "public": 1,
+ "quick_lists": [],
+ "roles": [
+  {
+   "role": "Labs Asset Dashboard Viewer"
+  }
+ ],
+ "sequence_id": 41.0,
+ "shortcuts": [],
+ "title": "Asset_Management"
+}

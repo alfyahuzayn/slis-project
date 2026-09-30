@@ -1,0 +1,54 @@
+/* Define your Brand Colors */
+:root {
+    --sidebar-bg: #2c3e50;         /* Dark Blue Sidebar */
+    --sidebar-hover: #34495e;      /* Slightly lighter blue for hover */
+    --sidebar-text: #ffffff;       /* White text */
+    --sidebar-active-accent: #28a745; /* Green accent for selected item */
+}
+
+/* 1. Main Sidebar Background */
+.desk-sidebar {
+    background-color: var(--sidebar-bg) !important;
+    border-right: 1px solid rgba(255,255,255,0.1);
+}
+
+/* 2. Style for each Menu Item */
+.sidebar-item-container {
+    margin: 4px 12px !important;
+    border-radius: 8px !important;
+    transition: all 0.2s ease-in-out;
+}
+
+.sidebar-item-container .sidebar-link {
+    color: var(--sidebar-text) !important;
+    font-weight: 500;
+}
+
+/* 3. Hover Style */
+.sidebar-item-container:hover {
+    background-color: var(--sidebar-hover) !important;
+    transform: translateX(5px); /* Slight slide effect on hover */
+}
+
+/* 4. Selection/Active Style */
+.sidebar-item-container.active {
+    background-color: var(--sidebar-active-accent) !important;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.sidebar-item-container.active .sidebar-link {
+    color: #ffffff !important;
+    font-weight: bold;
+}
+
+/* 5. Left Border Indicator for Active Item */
+.sidebar-item-container.active::before {
+    content: "";
+    position: absolute;
+    left: -12px;
+    height: 100%;
+    width: 4px;
+    background-color: #ffffff;
+    border-radius: 0 4px 4px 0;
+}
+

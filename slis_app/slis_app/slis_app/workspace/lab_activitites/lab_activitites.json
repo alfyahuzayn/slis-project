@@ -1,0 +1,44 @@
+{
+ "charts": [],
+ "content": "[{\"id\":\"QroBzJ36xB\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Lab Activitites</span>\",\"col\":12}},{\"id\":\"FTFU1NNJ9e\",\"type\":\"custom_block\",\"data\":{\"custom_block_name\":\"lab activities\",\"col\":12}}]",
+ "creation": "2026-06-08 15:12:29.147944",
+ "custom_blocks": [
+  {
+   "custom_block_name": "lab activities",
+   "label": "lab activities"
+  }
+ ],
+ "docstatus": 0,
+ "doctype": "Workspace",
+ "for_user": "",
+ "hide_custom": 0,
+ "icon": "stock",
+ "idx": 0,
+ "indicator_color": "green",
+ "is_hidden": 0,
+ "label": "Lab Activitites",
+ "links": [],
+ "modified": "2026-06-29 10:56:21.436094",
+ "modified_by": "Administrator",
+ "module": "Slis App",
+ "name": "Lab Activitites",
+ "number_cards": [],
+ "owner": "Administrator",
+ "parent_page": "",
+ "public": 1,
+ "quick_lists": [],
+ "roles": [
+  {
+   "role": "Administrator"
+  },
+  {
+   "role": "slis_admin"
+  },
+  {
+   "role": "Managing Director"
+  }
+ ],
+ "sequence_id": 37.0,
+ "shortcuts": [],
+ "title": "Lab Activitites"
+}

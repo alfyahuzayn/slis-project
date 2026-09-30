@@ -1,0 +1,101 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2026-07-26 13:07:21.229574",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "name1",
+  "column_break_jxnd",
+  "date",
+  "section_break_zzdw",
+  "details",
+  "section_break_extr",
+  "total_number_of_samples",
+  "column_break_mgza",
+  "total_tests_performance",
+  "section_break_ijda",
+  "note"
+ ],
+ "fields": [
+  {
+   "fieldname": "name1",
+   "fieldtype": "Link",
+   "label": "Name",
+   "options": "Employee"
+  },
+  {
+   "fieldname": "column_break_jxnd",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "date",
+   "fieldtype": "Date",
+   "label": "Date"
+  },
+  {
+   "fieldname": "section_break_zzdw",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "details",
+   "fieldtype": "Table",
+   "label": "Details",
+   "options": "MPR Table"
+  },
+  {
+   "fieldname": "section_break_extr",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "total_number_of_samples",
+   "fieldtype": "Int",
+   "label": "Total Number of Samples"
+  },
+  {
+   "fieldname": "column_break_mgza",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "total_tests_performance",
+   "fieldtype": "Int",
+   "label": "Total Tests Performance"
+  },
+  {
+   "fieldname": "section_break_ijda",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "note",
+   "fieldtype": "Long Text",
+   "label": "Note"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2026-07-26 13:07:21.229574",
+ "modified_by": "Administrator",
+ "module": "Slis App",
+ "name": "Monthly Progress Report",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

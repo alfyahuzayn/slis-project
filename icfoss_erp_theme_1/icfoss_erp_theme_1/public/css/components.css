@@ -1,0 +1,115 @@
+/* --- WIDGET & CARD STYLES --- */
+.widget,
+.card,
+.form-section,
+.shortcut-widget-box {
+    background: #ffffff7b !important;
+    border: 1px solid #e8f0eb !important;
+    border-radius: 16px !important;
+    padding: 24px !important;
+    box-shadow: 0 1px 3px rgba(45, 106, 79, 0.04), 0 4px 12px rgba(0, 0, 0, 0.04) !important;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.widget:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 24px rgba(53, 128, 59, 0.1) !important;
+    border-color: var(--primary-light, #3aac01) !important;
+}
+
+/* Primary Buttons */
+.btn-primary {
+    background-color: var(--primary-color, #3aac01) !important;
+    border: none !important;
+    border-radius: 10px !important;
+    padding: 8px 20px !important;
+    font-weight: 600 !important;
+    box-shadow: 0 4px 10px rgba(45, 106, 79, 0.25) !important;
+    color: #ffffff !important;
+}
+
+.btn-primary:hover {
+    background-color: var(--primary-dark, #3aac01) !important;
+    box-shadow: 0 6px 14px rgba(45, 106, 79, 0.35) !important;
+}
+
+/* Form Inputs */
+.form-control {
+    background-color: #ffffff !important;
+    border: 1px solid var(--border-color, #e2e8e4) !important;
+    border-radius: 8px !important;
+    /* padding: 8px 12px !important; */
+    height: 38px !important;
+    line-height: 1.5 !important;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.form-control:focus {
+    border-color: var(--primary-color, #3aac01) !important;
+    box-shadow: 0 0 0 3px rgba(45, 106, 79, 0.12) !important;
+    outline: none !important;
+}
+
+/* Fix for Select dropdowns */
+select.form-control {
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+    display: flex !important;
+    align-items: center !important;
+}
+
+/* Onboarding */
+.widget.onboarding-widget-box .widget-body .onboarding-step.active,
+.widget.onboarding-widget-box .widget-body .onboarding-step:hover {
+    background-color: var(--primary-color, #2d6a4f) !important;
+    color: #ffffff !important;
+}
+
+/* Indicator / badge pills for status */
+.indicator-pill.green,
+.badge-success {
+    background-color: rgba(45, 106, 79, 0.12) !important;
+    color: #1A3A1A !important;
+}
+
+.indicator-pill.orange,
+.badge-warning {
+    background-color: rgba(234, 138, 0, 0.12) !important;
+    color: #c97a00 !important;
+}
+
+.indicator-pill.blue,
+.badge-primary {
+    background-color: rgba(37, 99, 181, 0.12) !important;
+    color: #2563b5 !important;
+}
+
+.indicator-pill.red,
+.badge-danger {
+    background-color: rgba(211, 47, 47, 0.12) !important;
+    color: #d32f2f !important;
+}
+
+/* Stat/number cards (dashboard summary cards) */
+.number-card .number-card-content .number {
+    color: var(--primary-dark, #1a3c2b) !important;
+    font-weight: 700 !important;
+}
+
+/* Links */
+a,
+.link-primary {
+    color: var(--primary-color, #3aac01) !important;
+}
+
+a:hover {
+    color: var(--primary-dark, #3aac01) !important;
+}
+
+/* Fix for Select dropdowns */
+select.form-control {
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+    display: flex !important;
+    align-items: center !important;
+}

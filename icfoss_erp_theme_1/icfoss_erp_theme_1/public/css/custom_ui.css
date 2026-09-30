@@ -1,0 +1,257 @@
+/* --- 1. GLOBAL RESET & LAYOUT --- */
+html, body {
+    max-width: 100% !important;
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    scrollbar-color: #f4f7f5 #f4f7f5 !important;
+}
+
+html body .page-body .container.page-container {
+    display: flex !important;
+    max-width: 100% !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    align-items: flex-start;
+}
+
+html body .layout-main-section-wrapper {
+    margin-left: 0 !important;
+    padding-left: 10px !important;
+    flex: 1 !important;
+}
+
+/* --- 2. THEME VARIABLES --- */
+:root {
+    --sidebar-bg: #1a120848;                  /* Deep forest green */
+    --sidebar-select-bg: #ffffff;            /* White active pill */
+    --sidebar-active-text: #1A1208;          /* Green text on active item */
+    --sidebar-hover-bg: rgba(255,255,255,0.08);
+    --border-radius-side: 30px 0 0 30px;
+}
+
+/* --- 3. SIDEBAR CORE --- */
+.desk-sidebar {
+    background-color: var(--sidebar-bg) !important;
+    border-right: none !important;
+    padding: 25px 0 25px 25px !important;
+    position: relative !important;
+    margin: 10px 0 10px 10px !important;
+    height: auto !important;
+    min-height: calc(100vh - 20px) !important;
+    border-radius: 20px !important;
+    flex: 0 0 260px !important;
+}
+
+/* Sidebar Item Shared Styles */
+.desk-sidebar .sidebar-link,
+.desk-sidebar .sidebar-item-container a {
+    color: #ffffff !important;
+    background: transparent !important;
+    margin: 4px 5px !important;
+    padding: 10px 15px !important;
+    display: flex !important;
+    align-items: center !important;
+    transition: all 0.2s ease;
+}
+
+/* Hover & Active States */
+.desk-sidebar .sidebar-item-container:hover,
+.desk-sidebar .sidebar-item-container.selected,
+.desk-sidebar .sidebar-link.active,
+.standard-sidebar-item.selected {
+    background-color: var(--sidebar-select-bg) !important;
+    border-radius: var(--border-radius-side) !important;
+    color: var(--sidebar-active-text) !important;
+    text-decoration: none !important;
+}
+
+/* Nested elements on hover/active */
+.desk-sidebar .sidebar-item-container:hover .sidebar-item-label,
+.desk-sidebar .sidebar-item-container.selected .sidebar-item-label,
+.desk-sidebar .sidebar-item-container:hover svg,
+.desk-sidebar .sidebar-item-container.selected .drop-icon svg {
+    color: var(--sidebar-active-text) !important;
+    stroke: var(--sidebar-active-text) !important;
+    --icon-stroke: var(--sidebar-active-text) !important;
+    fill: none !important;
+}
+
+/* --- 4. NAVBAR --- */
+.sticky-top, .navbar {
+    background-color: var(--sidebar-bg) !important;
+    width: 100% !important;
+    padding: 0 !important;
+    border: none !important;
+}
+
+.navbar .search-bar {
+    display: flex !important;
+    align-items: center !important;
+    position: relative !important;
+}
+
+#navbar-search {
+    background-color: rgba(255,255,255,0.12) !important;
+    color: #ffffff !important;
+    border: 1px solid rgba(255,255,255,0.2) !important;
+    border-radius: 10px !important;
+    height: 36px !important;
+    padding-left: 45px !important;
+    transition: all 0.3s ease;
+}
+
+#navbar-search::placeholder {
+    color: rgba(255,255,255,0.6) !important;
+}
+
+#navbar-search:focus {
+    background-color: rgba(255,255,255,0.2) !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15) !important;
+}
+
+.navbar .search-bar .search-icon {
+    position: absolute !important;
+    left: 15px !important;
+    top: 50% !important;
+    transform: translateY(-50%) !important;
+    z-index: 11;
+    pointer-events: none;
+}
+
+/* --- 5. COMPONENT CLEANUP --- */
+[data-page-route="Workspaces"] .widget.spacer {
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    pointer-events: none !important;
+}
+
+.layout-main-section {
+    background-color: #f4f7f500 !important;
+    width: 100% !important;
+    border: none !important;
+    margin: 0 !important;
+}
+
+/* Desktop-specific layout */
+@media (min-width: 769px) {
+    body.full-width .container {
+        width: 98% !important;
+        max-width: 100% !important;
+        margin: 0 auto !important;
+    }
+}
+
+/* --- 6. SIDEBAR ACTIVE ITEM --- */
+:root {
+    --sidebar-select-color: #ffffff !important;
+    --custom-text-color: #1A1208 !important;
+}
+
+html body .desk-sidebar .sidebar-item-container .sidebar-link.active {
+    background-color: var(--sidebar-select-color) !important;
+    margin-bottom: 4px !important;
+    border-radius: 30px 0 0 30px !important;
+}
+
+* {
+    scrollbar-color: #4f4f4fbb #f4f7f543 !important;
+}
+
+.standard-sidebar .standard-sidebar-item.selected,
+.desk-sidebar .standard-sidebar-item.selected,
+.search-dialog .search-results .search-sidebar .standard-sidebar-item.selected {
+    background-color: var(--sidebar-select-color) !important;
+    border-radius: 30px 0 0 30px;
+    color: var(--custom-text-color) !important;
+}
+
+[data-page-route=Workspaces] .standard-sidebar-item {
+    justify-content: space-between;
+    padding: 0px;
+    border-radius: 30px 30px 30px 30px;
+    color: var(--custom-text-color) !important;
+}
+
+html body .desk-sidebar .sidebar-item-container .selected .sidebar-item-label {
+    color: #1A1208 !important;
+}
+
+.item-anchor:hover {
+    color: #1A1208 !important;
+    border-radius: 30px 0 0 30px !important;
+}
+
+/* Link hover within sidebar */
+.desk-sidebar .sidebar-item-container a:hover .sidebar-item-label,
+.desk-sidebar .sidebar-item-container a:hover span,
+.desk-sidebar .sidebar-item-container a:hover i,
+.desk-sidebar .sidebar-item-container a:hover svg {
+    color: #1A1208 !important;
+    stroke: #1A1208 !important;
+    transition: color 0.2s ease;
+    border-radius: 30px 0 0 30px !important;
+}
+
+.desk-sidebar .sidebar-item-container a:hover {
+    background-color: rgba(255, 255, 255, 0.1) !important;
+    text-decoration: none !important;
+    border-radius: 30px 0 0 30px !important;
+}
+
+.desk-sidebar .sidebar-item-container a:hover svg.icon {
+    --icon-stroke: #1a3c2b !important;
+    fill: none !important;
+}
+
+/* --- 7. NAVBAR TEXT & ICONS --- */
+.navbar .navbar-nav .nav-link {
+    color: white;
+}
+
+.navbar .es-icon {
+    fill: #ffffff;
+    stroke: #ffffff;
+}
+
+.notifications-icon svg.es-icon {
+    stroke: #ffffff !important;
+    fill: #ffffff !important;
+}
+
+/* Sidebar section labels */
+.standard-sidebar .standard-sidebar-section .standard-sidebar-label,
+.desk-sidebar .standard-sidebar-section .standard-sidebar-label,
+.search-dialog .search-results .search-sidebar .standard-sidebar-section .standard-sidebar-label {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 10px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    font-weight: 600;
+    margin-top: 16px;
+    padding-left: 15px;
+}
+
+#navbar-breadcrumbs a {
+    color: white !important;
+}
+
+/* --- 8. SCROLLBAR STYLING (GREEN ACCENT) --- */
+::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f4f7f5;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #b7d5c4;
+    border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #3aac01;
+}

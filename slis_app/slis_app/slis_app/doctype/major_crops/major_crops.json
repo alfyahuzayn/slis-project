@@ -1,0 +1,82 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2026-02-19 16:39:33.905297",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "crop_column",
+  "crop",
+  "variety",
+  "crop_growth_term",
+  "groundwater_level",
+  "age_of_tree",
+  "average_yield",
+  "area"
+ ],
+ "fields": [
+  {
+   "fieldname": "crop_column",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "variety",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Variety"
+  },
+  {
+   "fieldname": "crop_growth_term",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Crop Growth Term",
+   "options": "Long Term\nShort Term"
+  },
+  {
+   "fieldname": "groundwater_level",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Groundwater Level"
+  },
+  {
+   "fieldname": "age_of_tree",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Age of Tree"
+  },
+  {
+   "fieldname": "average_yield",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Average Yield"
+  },
+  {
+   "fieldname": "area",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Area"
+  },
+  {
+   "fieldname": "crop",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Crop"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2026-02-19 16:57:39.451169",
+ "modified_by": "Administrator",
+ "module": "Slis App",
+ "name": "Major Crops",
+ "owner": "Administrator",
+ "permissions": [],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

@@ -1,0 +1,51 @@
+{
+ "cards": [
+  {
+   "card": "Samples This Month"
+  },
+  {
+   "card": "Samples Pending"
+  },
+  {
+   "card": "Testing Completed"
+  },
+  {
+   "card": "Samples received this year"
+  },
+  {
+   "card": "Total Samples This Month"
+  },
+  {
+   "card": "Completed Test This Month"
+  },
+  {
+   "card": "Pending Tests This Month"
+  }
+ ],
+ "charts": [
+  {
+   "chart": "Sample Status Overview",
+   "width": "Half"
+  },
+  {
+   "chart": "Lab -Wise Sample Collected",
+   "width": "Half"
+  },
+  {
+   "chart": "Scheme-Wise Total Sample",
+   "width": "Half"
+  }
+ ],
+ "creation": "2026-03-09 11:15:11.964160",
+ "dashboard_name": "PSC's Dashboard",
+ "docstatus": 0,
+ "doctype": "Dashboard",
+ "idx": 0,
+ "is_default": 0,
+ "is_standard": 1,
+ "modified": "2026-04-23 14:43:22.827230",
+ "modified_by": "Administrator",
+ "module": "Slis App",
+ "name": "PSC's Dashboard",
+ "owner": "Administrator"
+}

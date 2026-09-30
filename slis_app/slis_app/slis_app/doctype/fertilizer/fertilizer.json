@@ -1,0 +1,62 @@
+{
+ "actions": [],
+ "allow_import": 1,
+ "allow_rename": 1,
+ "autoname": "field:fertilizer_name",
+ "creation": "2026-02-10 15:26:27.875491",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "fertilizer_name",
+  "primary_nutrient",
+  "nutrient_percentage"
+ ],
+ "fields": [
+  {
+   "fieldname": "fertilizer_name",
+   "fieldtype": "Data",
+   "label": "Fertilizer Name",
+   "unique": 1
+  },
+  {
+   "fieldname": "primary_nutrient",
+   "fieldtype": "Link",
+   "label": "Primary Nutrient",
+   "options": "Soil Test Package"
+  },
+  {
+   "fieldname": "nutrient_percentage",
+   "fieldtype": "Percent",
+   "label": "Nutrient Percentage"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2026-03-20 11:38:43.965939",
+ "modified_by": "Administrator",
+ "module": "Slis App",
+ "name": "Fertilizer",
+ "naming_rule": "By fieldname",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "import": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

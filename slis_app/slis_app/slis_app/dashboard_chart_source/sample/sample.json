@@ -1,0 +1,13 @@
+{
+ "creation": "2026-03-09 11:31:54.291747",
+ "docstatus": 0,
+ "doctype": "Dashboard Chart Source",
+ "idx": 0,
+ "modified": "2026-03-09 11:31:54.291747",
+ "modified_by": "Administrator",
+ "module": "Slis App",
+ "name": "sample",
+ "owner": "Administrator",
+ "source_name": "sample",
+ "timeseries": 0
+}

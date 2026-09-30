@@ -1,0 +1,51 @@
+{
+ "add_total_row": 0,
+ "add_translate_data": 0,
+ "columns": [],
+ "creation": "2026-06-08 15:12:28.298831",
+ "disabled": 0,
+ "docstatus": 0,
+ "doctype": "Report",
+ "filters": [
+  {
+   "fieldname": "from_date",
+   "fieldtype": "Date",
+   "label": "From Date",
+   "mandatory": 0,
+   "wildcard_filter": 0
+  },
+  {
+   "fieldname": "to_date",
+   "fieldtype": "Date",
+   "label": "To Date",
+   "mandatory": 0,
+   "wildcard_filter": 0
+  }
+ ],
+ "idx": 0,
+ "is_standard": "Yes",
+ "letter_head": null,
+ "modified": "2026-06-29 11:15:43.677567",
+ "modified_by": "Administrator",
+ "module": "Slis App",
+ "name": "Sample Status",
+ "owner": "Administrator",
+ "prepared_report": 0,
+ "query": "SELECT \n    CASE \n        WHEN status = 'Completed' THEN 'Completed'\n        ELSE 'Pending'\n    END as status_category,\n    COUNT(name) as total_samples\nFROM \n    `tabSoil Sample Collection`\nWHERE \n    status != 'Draft'\nGROUP BY \n    status_category;",
+ "ref_doctype": "Soil Sample Collection",
+ "report_name": "Sample Status",
+ "report_script": "\ndef execute(filters=None):\n    # 1. Define the columns. We use \"html\" fieldtype for the count to make it a link.\n    columns = [\n        {\"label\": \"Status Category\", \"fieldname\": \"status_category\", \"fieldtype\": \"Data\", \"width\": 200},\n        {\"label\": \"Total Samples\", \"fieldname\": \"total_samples\", \"fieldtype\": \"html\", \"width\": 150}\n    ]\n\n    # 2. Get the counts from the database\n    # Count Completed\n    completed_count = frappe.db.count(\"Soil Sample Collection\", filters={\"status\": \"Completed\"})\n    \n    # Count Pending (Everything except Completed and Draft)\n    pending_count = frappe.db.count(\"Soil Sample Collection\", filters={\n        \"status\": [\"not in\", [\"Completed\", \"Draft\"]]\n    })\n\n    # 3. Create the Links\n    # This URL opens the list view with a filter applied\n    completed_link = f'<a href=\"/app/soil-sample-collection?status=Completed\"><b>{completed_count}</b></a>'\n    \n    # This URL uses a JSON-style filter for multiple \"Pending\" statuses\n    pending_url = '/app/soil-sample-collection?status=[\"not in\", [\"Completed\", \"Draft\"]]'\n    pending_link = f'<a href=\\'{pending_url}\\'><b>{pending_count}</b></a>'\n\n    # 4. Format the data for the report table\n    data = [\n        {\n            \"status_category\": \"Completed\",\n            \"total_samples\": completed_link\n        },\n        {\n            \"status_category\": \"Pending\",\n            \"total_samples\": pending_link\n        }\n    ]\n\n    return columns, data",
+ "report_type": "Script Report",
+ "roles": [
+  {
+   "role": "Soil Intaker L1"
+  },
+  {
+   "role": "slis_admin"
+  },
+  {
+   "role": "Soil Intaker L2"
+  }
+ ],
+ "timeout": 0
+}

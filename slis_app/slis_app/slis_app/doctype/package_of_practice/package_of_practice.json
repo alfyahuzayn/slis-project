@@ -1,0 +1,82 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2026-02-10 12:42:05.570324",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "crop",
+  "type",
+  "age",
+  "fym_min",
+  "fym_max",
+  "fym_unit",
+  "nutrient_data"
+ ],
+ "fields": [
+  {
+   "fieldname": "crop",
+   "fieldtype": "Link",
+   "label": "Crop",
+   "options": "Crops Master"
+  },
+  {
+   "fieldname": "age",
+   "fieldtype": "Data",
+   "label": "Crop Stage (in year)"
+  },
+  {
+   "fieldname": "nutrient_data",
+   "fieldtype": "Table",
+   "label": "Nutrient Data",
+   "options": "PoP Nutrients CT"
+  },
+  {
+   "fieldname": "fym_min",
+   "fieldtype": "Float",
+   "label": "FYM Min"
+  },
+  {
+   "fieldname": "fym_max",
+   "fieldtype": "Float",
+   "label": "FYM Max"
+  },
+  {
+   "fieldname": "fym_unit",
+   "fieldtype": "Data",
+   "label": "FYM Unit"
+  },
+  {
+   "fieldname": "type",
+   "fieldtype": "Data",
+   "label": "Type"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2026-03-11 15:03:52.643113",
+ "modified_by": "Administrator",
+ "module": "Slis App",
+ "name": "Package of Practice",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

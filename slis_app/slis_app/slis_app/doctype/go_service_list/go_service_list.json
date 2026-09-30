@@ -1,0 +1,43 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2026-03-02 15:48:02.903586",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "soil_service_item",
+  "rate"
+ ],
+ "fields": [
+  {
+   "fieldname": "soil_service_item",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Soil Service Item",
+   "options": "Soil Service Item"
+  },
+  {
+   "fetch_from": "soil_service_item.rate",
+   "fieldname": "rate",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Rate"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2026-05-12 15:42:29.421642",
+ "modified_by": "Administrator",
+ "module": "Slis App",
+ "name": "GO Service list",
+ "owner": "Administrator",
+ "permissions": [],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

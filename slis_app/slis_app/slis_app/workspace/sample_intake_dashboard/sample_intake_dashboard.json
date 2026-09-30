@@ -1,0 +1,47 @@
+{
+ "charts": [],
+ "content": "[{\"id\":\"XnF9AlWeB6\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Soil Intake Dashboard</span>\",\"col\":12}},{\"id\":\"qVByJMj3jP\",\"type\":\"custom_block\",\"data\":{\"custom_block_name\":\"My Dashboard\",\"col\":12}}]",
+ "creation": "2026-06-08 15:12:29.118145",
+ "custom_blocks": [
+  {
+   "custom_block_name": "My Dashboard",
+   "label": "My Dashboard"
+  }
+ ],
+ "docstatus": 0,
+ "doctype": "Workspace",
+ "for_user": "",
+ "hide_custom": 0,
+ "icon": "stock",
+ "idx": 0,
+ "indicator_color": "",
+ "is_hidden": 0,
+ "label": "Sample Intake Dashboard",
+ "links": [],
+ "modified": "2026-07-16 10:21:11.666110",
+ "modified_by": "Administrator",
+ "module": "Slis App",
+ "name": "Sample Intake Dashboard",
+ "number_cards": [],
+ "owner": "Administrator",
+ "parent_page": "",
+ "public": 1,
+ "quick_lists": [],
+ "roles": [
+  {
+   "role": "Soil Intaker L1"
+  },
+  {
+   "role": "Soil Tester L1"
+  },
+  {
+   "role": "Soil Intaker L2"
+  },
+  {
+   "role": "Soil Tester L2"
+  }
+ ],
+ "sequence_id": 39.0,
+ "shortcuts": [],
+ "title": "Sample Intake Dashboard"
+}

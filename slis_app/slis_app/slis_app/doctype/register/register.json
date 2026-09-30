@@ -1,0 +1,132 @@
+{
+ "actions": [],
+ "creation": "2026-02-08 23:42:09.433242",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "source_sample_id",
+  "latitude",
+  "longitude",
+  "tests",
+  "crops_list",
+  "plot_size",
+  "section_break_sycb",
+  "client_type",
+  "program_name",
+  "number_of_samples",
+  "register_sample_data",
+  "lab_code_prefix",
+  "lab_code_start",
+  "html"
+ ],
+ "fields": [
+  {
+   "fieldname": "source_sample_id",
+   "fieldtype": "Link",
+   "label": "Source Sample Form",
+   "options": "Soil Sample Collection"
+  },
+  {
+   "fieldname": "latitude",
+   "fieldtype": "Float",
+   "label": "Latitude"
+  },
+  {
+   "fieldname": "longitude",
+   "fieldtype": "Float",
+   "label": "Longitude"
+  },
+  {
+   "depends_on": "eval:doc.client_type != 'Department'",
+   "fieldname": "tests",
+   "fieldtype": "Table",
+   "label": "Tests ",
+   "options": "Test Details"
+  },
+  {
+   "fieldname": "client_type",
+   "fieldtype": "Data",
+   "label": "Client Type"
+  },
+  {
+   "depends_on": "eval:doc.client_type != 'Department'",
+   "fieldname": "crops_list",
+   "fieldtype": "Table",
+   "label": "Crops List",
+   "options": "Crops"
+  },
+  {
+   "fieldname": "plot_size",
+   "fieldtype": "Data",
+   "label": "Plot SIze"
+  },
+  {
+   "fieldname": "section_break_sycb",
+   "fieldtype": "Section Break"
+  },
+  {
+   "depends_on": "eval:doc.client_type == 'Department'",
+   "fieldname": "program_name",
+   "fieldtype": "Data",
+   "label": "Program Name"
+  },
+  {
+   "fieldname": "number_of_samples",
+   "fieldtype": "Int",
+   "label": "Number of Samples"
+  },
+  {
+   "depends_on": "eval:doc.client_type == 'Department'",
+   "fieldname": "register_sample_data",
+   "fieldtype": "Table",
+   "hidden": 1,
+   "label": "Register Sample Data",
+   "options": "Sample Data"
+  },
+  {
+   "depends_on": "eval:doc.client_type == 'Department'",
+   "fieldname": "lab_code_prefix",
+   "fieldtype": "Data",
+   "label": "Lab code Prefix"
+  },
+  {
+   "depends_on": "eval:doc.client_type == 'Department'",
+   "fieldname": "lab_code_start",
+   "fieldtype": "Int",
+   "label": "Lab Code Start"
+  },
+  {
+   "depends_on": "eval:doc.client_type == 'Department'",
+   "fieldname": "html",
+   "fieldtype": "HTML",
+   "label": "Sample Table"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2026-04-28 10:04:14.755022",
+ "modified_by": "Administrator",
+ "module": "Slis App",
+ "name": "Register",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

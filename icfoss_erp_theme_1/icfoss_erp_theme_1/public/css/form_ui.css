@@ -1,0 +1,467 @@
+/* ============================================================
+   SLIS FORM ENTRY STYLING — Claude Mock Match (Green Theme)
+   ============================================================ */
+
+/* ---- FORM PAGE HEADER ---- */
+html body .page-head {
+    background-color: #ffffff !important;
+    border-bottom: 1px solid #e5e7eb !important;
+    padding-top: 5px !important;
+    padding-bottom: 5px !important;
+    box-shadow: none !important;
+}
+
+html body .page-head .title-area .title-text {
+    font-size: 16px !important;
+    font-weight: 700 !important;
+    color: #111827 !important;
+    letter-spacing: -0.01em !important;
+}
+
+/* Breadcrumb title */
+html body .page-head .breadcrumb-area .breadcrumb-item a,
+html body .page-head .breadcrumb-area .breadcrumb {
+    color: #1A1208 !important;
+    font-weight: 500 !important;
+    font-size: 13px !important;
+}
+
+/* "NOT SAVED" badge */
+html body .title-area .indicator-pill.orange,
+html body .indicator-pill[data-color="orange"],
+html body .form-unsaved .indicator {
+    background-color: transparent !important;
+    color: #f97316 !important;
+    border: 1px solid #fdba74 !important;
+    font-weight: 600 !important;
+    font-size: 10px !important;
+    letter-spacing: 0.05em !important;
+    text-transform: uppercase !important;
+    padding: 2px 8px !important;
+    border-radius: 20px !important;
+}
+
+/* ---- MAIN FORM LAYOUT ---- */
+/* Remove the default box around the entire form layout */
+html body .form-layout {
+    background-color: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+    margin-bottom: 16px !important;
+}
+
+html body .form-page,
+html body .layout-main,
+html body .page-content,
+html body .page-body {
+    background-color: #f9fbfa !important; /* Cool light grey-green background */
+}
+
+html body .form-column.col-sm-12, 
+html body .form-column {
+    padding: 0 !important;
+}
+
+/* Remove default separator lines and paddings inside sections */
+html body .form-section.card-section,
+html body .form-section {
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    margin: 0 !important;
+    padding: 0 0 24px 0 !important;
+    border-radius: 0 !important;
+}
+
+html body .section-body .section-head,
+html body .form-section .section-head,
+html body .section-head,
+html body .frappe-control[data-fieldtype="Section Break"] .control-label,
+html body .form-section-heading {
+    display: flex !important;
+    align-items: center !important;
+    background: transparent !important;
+    color: #6b7280 !important;
+    font-size: 10px !important;
+    font-weight: 700 !important;
+    letter-spacing: 0.12em !important;
+    text-transform: uppercase !important;
+    padding: 0 0 16px 0 !important;
+    margin: 0 !important;
+    border-bottom: none !important;
+    border-radius: 0 !important;
+    width: 100% !important;
+}
+
+/* Bullet dot before section title */
+html body .form-section .section-head::before,
+html body .section-head::before,
+html body .frappe-control[data-fieldtype="Section Break"] .control-label::before,
+html body .form-section-heading::before {
+    content: "\25cf";
+    color: #1A1208 !important;
+    font-size: 11px !important;
+    margin-right: 8px !important;
+    opacity: 1 !important;
+}
+
+/* Subtle line extending after the section title */
+html body .form-section .section-head::after,
+html body .section-head::after,
+html body .frappe-control[data-fieldtype="Section Break"] .control-label::after,
+html body .form-section-heading::after {
+    content: "" !important;
+    flex-grow: 1 !important;
+    height: 1px !important;
+    background-color: #e5e7eb !important;
+    margin-left: 16px !important;
+}
+
+/* Section body (fields area) */
+html body .form-section .section-body {
+    padding: 0 8px !important;
+}
+
+/* ---- FIELD LABELS ---- */
+html body .frappe-control .control-label,
+html body .form-control-label {
+    font-size: 12px !important;
+    font-weight: 500 !important;
+    color: #4b5563 !important;
+    letter-spacing: 0 !important;
+    text-transform: none !important;
+    margin-bottom: 6px !important;
+}
+
+/* Required asterisk */
+html body .reqd .control-label::after,
+html body .frappe-control.reqd .control-label::after {
+    color: #e53e3e !important;
+}
+
+/* ---- FORM INPUTS ---- */
+html body .form-control,
+html body .frappe-control input[type="text"],
+html body .frappe-control input[type="number"],
+html body .frappe-control input[type="email"],
+html body .frappe-control input[type="password"],
+html body .frappe-control input[type="date"],
+html body .frappe-control input[type="time"],
+html body .frappe-control textarea,
+html body .frappe-control select {
+    background-color: #ffffff !important;
+    border: 1px solid #d1d5db !important;
+    border-radius: 6px !important;
+    /* padding: 9px 12px !important; */
+    height: 36px !important;
+    line-height: 1.5 !important;
+    color: #111827 !important;
+    font-size: 13px !important;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    box-shadow: none !important;
+}
+
+html body .frappe-control textarea {
+    height: auto !important;
+    min-height: 80px !important;
+}
+
+html body .form-control:focus,
+html body .frappe-control input:focus,
+html body .frappe-control textarea:focus,
+html body .frappe-control select:focus {
+    border-color: #1A1208 !important;
+    box-shadow: 0 0 0 3px rgba(45, 106, 79, 0.1) !important;
+    outline: none !important;
+}
+
+html body .form-control::placeholder,
+html body .frappe-control input::placeholder,
+html body .frappe-control textarea::placeholder {
+    color: #9ca3af !important;
+    font-style: normal !important;
+    font-size: 13px !important;
+}
+
+/* Link fields (dot) */
+html body .frappe-control .link-btn {
+    color: #1A1208 !important;
+}
+
+/* ---- RIGHT SIDEBAR PANELS ---- */
+html body .layout-side-section .form-sidebar {
+    padding: 0 0 0 24px !important;
+}
+
+/* Each sidebar section card */
+html body .form-sidebar > div,
+html body .layout-side-section .sidebar-section,
+html body .layout-side-section .form-assignments,
+html body .layout-side-section .form-attachments,
+html body .layout-side-section .form-tags,
+html body .layout-side-section .workflow-section,
+html body .sidebar-section .form-section-card {
+    background: #ffffff !important;
+    border-radius: 8px !important;
+    border: 1px solid #e5e7eb !important;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04) !important;
+    margin-bottom: 16px !important;
+    padding: 16px !important;
+    overflow: hidden !important;
+}
+
+/* Sidebar section titles (COMPLETION, DOCUMENT INFO, WORKFLOW) */
+html body .layout-side-section .form-sidebar .sidebar-section h6,
+html body .sidebar-section-head,
+html body .form-sidebar .form-section-head {
+    background: transparent !important;
+    color: #6b7280 !important;
+    font-size: 10px !important;
+    font-weight: 700 !important;
+    letter-spacing: 0.1em !important;
+    text-transform: uppercase !important;
+    padding: 0 0 12px 0 !important;
+    margin: 0 !important;
+    border-bottom: 1px solid #f3f4f6 !important;
+    border-radius: 0 !important;
+    margin-bottom: 12px !important;
+    display: flex !important;
+    align-items: center !important;
+}
+
+/* Sidebar icons */
+html body .layout-side-section .form-sidebar .sidebar-section h6 > i,
+html body .layout-side-section .form-sidebar .sidebar-section h6 > svg {
+    margin-right: 6px !important;
+    color: #9ca3af !important;
+}
+
+/* Completion bar */
+html body .completion-widget .progress {
+    height: 4px !important;
+    border-radius: 2px !important;
+    background-color: #f3f4f6 !important;
+}
+
+html body .completion-widget .progress-bar {
+    background-color: #1A1208 !important;
+    border-radius: 2px !important;
+}
+
+/* Completion % text */
+html body .completion-widget .percent-label {
+    color: #4b5563 !important;
+    font-size: 10px !important;
+}
+
+/* DOCUMENT INFO values */
+html body .form-sidebar .sidebar-label {
+    color: #6b7280 !important;
+    font-size: 11px !important;
+    font-weight: 500 !important;
+}
+
+html body .form-sidebar .sidebar-value {
+    color: #111827 !important;
+    font-size: 12px !important;
+    font-weight: 600 !important;
+}
+
+/* ---- WORKFLOW SECTION ---- */
+html body .workflow-section .workflow-step {
+    position: relative !important;
+    padding-left: 20px !important;
+    margin-bottom: 12px !important;
+}
+
+/* Workflow step dot */
+html body .workflow-section .workflow-step::before {
+    content: "" !important;
+    width: 8px !important;
+    height: 8px !important;
+    border-radius: 50% !important;
+    background-color: #d1d5db !important;
+    position: absolute !important;
+    left: 0 !important;
+    top: 5px !important;
+}
+
+html body .workflow-section .workflow-step.active::before,
+html body .workflow-section .workflow-step.current::before {
+    background-color: #1A1208 !important;
+    box-shadow: 0 0 0 3px rgba(45, 106, 79, 0.15) !important;
+}
+
+/* Workflow connector line */
+html body .workflow-section .workflow-step::after {
+    content: "" !important;
+    width: 2px !important;
+    height: calc(100% + 4px) !important;
+    background-color: #f3f4f6 !important;
+    position: absolute !important;
+    left: 3px !important;
+    top: 13px !important;
+}
+
+html body .workflow-section .workflow-step:last-child::after {
+    display: none !important;
+}
+
+/* ---- BOTTOM ACTION BUTTONS ---- */
+html body .form-footer {
+    display: flex !important;
+    justify-content: flex-end !important;
+    gap: 12px !important;
+    padding: 12px 24px !important;
+    background-color: #ffffff !important;
+    border-top: 1px solid #e5e7eb !important;
+    position: sticky !important;
+    bottom: 0 !important;
+    z-index: 100 !important;
+}
+
+/* Discard button */
+html body .page-actions .btn-secondary,
+html body .form-footer .btn-secondary,
+html body .page-actions [data-label="Discard"] {
+    background-color: #ffffff !important;
+    border: 1px solid #d1d5db !important;
+    color: #4b5563 !important;
+    border-radius: 6px !important;
+    font-weight: 600 !important;
+    font-size: 12px !important;
+    padding: 6px 14px !important;
+    transition: all 0.2s ease !important;
+}
+
+html body .page-actions .btn-secondary:hover,
+html body .form-footer .btn-secondary:hover {
+    background-color: #f9fafb !important;
+    color: #111827 !important;
+}
+
+/* Save as Draft */
+html body .page-actions .btn-default,
+html body .form-footer .btn-default,
+html body .page-actions [data-label="Save as Draft"] {
+    background-color: #ffffff !important;
+    border: 1px solid #d1d5db !important;
+    color: #4b5563 !important;
+    border-radius: 6px !important;
+    font-weight: 600 !important;
+    font-size: 12px !important;
+    padding: 6px 14px !important;
+    transition: all 0.2s ease !important;
+}
+
+html body .page-actions .btn-default:hover,
+html body .form-footer .btn-default:hover {
+    background-color: #f9fafb !important;
+}
+
+/* Save & Submit — primary action button */
+html body .page-actions .btn-primary,
+html body .form-footer .btn-primary,
+html body .page-actions [data-label="Save & Submit"] {
+    background-color: #1A1208 !important;
+    border: none !important;
+    color: #ffffff !important;
+    border-radius: 6px !important;
+    font-weight: 600 !important;
+    font-size: 12px !important;
+    padding: 7px 18px !important;
+    box-shadow: 0 1px 2px rgba(45, 106, 79, 0.2) !important;
+    transition: all 0.2s ease !important;
+}
+
+html body .page-actions .btn-primary:hover,
+html body .form-footer .btn-primary:hover {
+    background-color: #123700 !important;
+}
+
+/* Actions dropdown */
+html body .page-actions .actions-btn-group .btn {
+    background-color: #ffffff !important;
+    border: 1px solid #d1d5db !important;
+    color: #4b5563 !important;
+    border-radius: 6px !important;
+    font-weight: 600 !important;
+    font-size: 12px !important;
+    padding: 6px 14px !important;
+}
+
+/* ---- TAB HEADERS / DOC TABS ---- */
+html body .form-tabs-list {
+    margin-bottom: 10px !important;
+    border-bottom: 1px solid #e5e7eb !important;
+}
+
+html body .form-tabs-list .nav-item .nav-link {
+    color: #6b7280 !important;
+    font-weight: 500 !important;
+    font-size: 13px !important;
+    border: none !important;
+    padding: 10px 18px !important;
+    border-bottom: 2px solid transparent !important;
+    transition: all 0.2s ease !important;
+}
+
+html body .form-tabs-list .nav-item .nav-link.active,
+html body .form-tabs-list .nav-item .nav-link:hover {
+    color: #1A1208 !important;
+    border-bottom-color: #1A1208 !important;
+    background: transparent !important;
+}
+
+/* ---- CHILD TABLES ---- */
+html body .form-grid .grid-heading-row .col {
+    background-color: #f9fafb !important;
+    color: #6b7280 !important;
+    font-size: 10px !important;
+    font-weight: 700 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.1em !important;
+    padding: 10px 12px !important;
+    border-bottom: 1px solid #e5e7eb !important;
+    border-top: 1px solid #e5e7eb !important;
+}
+
+html body .form-grid .grid-row:hover .data-row {
+    background-color: #f9fbfb !important;
+}
+
+html body .form-grid .grid-row.selected .data-row {
+    background-color: rgba(45, 106, 79, 0.04) !important;
+}
+
+html body .form-grid .btn-open-row {
+    color: #6b7280 !important;
+}
+
+html body .form-grid .grid-footer .btn-xs {
+    background-color: #ffffff !important;
+    border: 1px solid #d1d5db !important;
+    color: #4b5563 !important;
+    border-radius: 4px !important;
+}
+
+html body .form-grid .grid-footer .btn-xs:hover {
+    background-color: #f9fafb !important;
+}
+
+html body .grid-add-row {
+    background-color: #ffffff !important;
+    border: 1px dashed #d1d5db !important;
+    color: #4b5563 !important;
+    border-radius: 4px !important;
+}
+
+html body .grid-add-row:hover {
+    border-color: #3aac01 !important;
+    color: #3aac01 !important;
+}
+
+
+
+

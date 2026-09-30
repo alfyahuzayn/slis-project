@@ -1,0 +1,186 @@
+{
+ "actions": [],
+ "allow_import": 1,
+ "allow_rename": 1,
+ "autoname": "format:CL-#####",
+ "creation": "2026-02-07 16:03:45.318618",
+ "default_view": "List",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "login_lab_name",
+  "client_type",
+  "name_field",
+  "address",
+  "department_address",
+  "column_break_pesw",
+  "sample_collection_date",
+  "contact_number",
+  "alternate_contact_number",
+  "mail_id",
+  "department_section_section",
+  "column_break_vtbg",
+  "type_of_collection",
+  "custom_name_of_type",
+  "column_break_rlmh",
+  "campaign_date",
+  "consultancy_section_section",
+  "consultancy_type",
+  "education_level",
+  "column_break_ddic"
+ ],
+ "fields": [
+  {
+   "fieldname": "client_type",
+   "fieldtype": "Select",
+   "label": "Client Type",
+   "options": "\nFarmer\nDepartment\nConsultancy"
+  },
+  {
+   "depends_on": "eval: doc.client_type ==\"Department\"",
+   "fieldname": "department_section_section",
+   "fieldtype": "Section Break",
+   "label": "Department Section"
+  },
+  {
+   "fieldname": "column_break_vtbg",
+   "fieldtype": "Column Break"
+  },
+  {
+   "depends_on": "eval: doc.client_type ==\"Department\"",
+   "fieldname": "type_of_collection",
+   "fieldtype": "Select",
+   "label": "Type of collection",
+   "options": "\nCampaign\nScheme\nRoutine Research\nProject"
+  },
+  {
+   "depends_on": "eval: doc.client_type ==\"Department\"",
+   "fieldname": "campaign_date",
+   "fieldtype": "Date",
+   "label": "Date"
+  },
+  {
+   "fieldname": "column_break_rlmh",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "consultancy_section_section",
+   "fieldtype": "Section Break",
+   "label": "Consultancy Section"
+  },
+  {
+   "depends_on": "eval:doc.client_type == \"Consultancy\"",
+   "fieldname": "consultancy_type",
+   "fieldtype": "Select",
+   "label": "Consultancy Type",
+   "options": "\nStudents and Researchers\nOther Government Departments\nInstitutions\nAgencies\nIndividuals"
+  },
+  {
+   "fieldname": "column_break_ddic",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "mail_id",
+   "fieldtype": "Data",
+   "label": "Mail ID"
+  },
+  {
+   "fieldname": "contact_number",
+   "fieldtype": "Data",
+   "in_filter": 1,
+   "in_global_search": 1,
+   "in_standard_filter": 1,
+   "label": "Contact Number",
+   "length": 10
+  },
+  {
+   "fieldname": "column_break_pesw",
+   "fieldtype": "Column Break"
+  },
+  {
+   "columns": 4,
+   "depends_on": "eval:doc.client_type==\"Consultancy\" || doc.client_type==\"Farmer\"",
+   "fieldname": "address",
+   "fieldtype": "Small Text",
+   "label": "Address",
+   "print_width": "2",
+   "width": "2"
+  },
+  {
+   "depends_on": "eval:doc.client_type==\"Consultancy\" && doc.consultancy_type==\"Students and Researchers\"",
+   "fieldname": "education_level",
+   "fieldtype": "Select",
+   "label": "Education Level",
+   "options": "\nSchool\nUG\nPG\nPhD"
+  },
+  {
+   "fieldname": "alternate_contact_number",
+   "fieldtype": "Data",
+   "label": "Alternate Contact Number "
+  },
+  {
+   "fieldname": "login_lab_name",
+   "fieldtype": "Link",
+   "label": "Collection Lab",
+   "options": "Soil Laboratory",
+   "read_only": 1
+  },
+  {
+   "depends_on": "eval:doc.client_type==\"Farmer\" || doc.client_type==\"Consultancy\"",
+   "fieldname": "sample_collection_date",
+   "fieldtype": "Date",
+   "hidden": 1,
+   "label": "Sample Collection Date"
+  },
+  {
+   "fieldname": "name_field",
+   "fieldtype": "Data",
+   "in_filter": 1,
+   "in_global_search": 1,
+   "in_standard_filter": 1,
+   "label": "Name"
+  },
+  {
+   "fieldname": "custom_name_of_type",
+   "fieldtype": "Link",
+   "label": "Program Name",
+   "options": "Scheme or Programs"
+  },
+  {
+   "depends_on": "eval: doc.client_type ==\"Department\"",
+   "fieldname": "department_address",
+   "fieldtype": "Link",
+   "label": "Department Address",
+   "options": "Department Office Address"
+  }
+ ],
+ "grid_page_length": 50,
+ "hide_toolbar": 1,
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2026-08-05 12:36:15.887013",
+ "modified_by": "Administrator",
+ "module": "Slis App",
+ "name": "Clients",
+ "naming_rule": "Expression (old style)",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}
